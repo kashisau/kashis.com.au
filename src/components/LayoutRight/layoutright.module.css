@@ -1,0 +1,3 @@
+.LayoutRight {
+  composes: PageLayout from '../layouts.module.css';
+}

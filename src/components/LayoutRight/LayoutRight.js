@@ -1,8 +1,8 @@
 import React from 'react'
-import './all.sass'
+import styles from './layoutright.module.css'
 
 const LayoutRight = ({ heading, pageRef, children }) =>
-  <section className="PageLayout PageLayout--right" ref={pageRef}>
+  <section className={styles.LayoutRight} ref={pageRef}>
     <header><h1>{heading}</h1></header>
     <main>{children}</main>
   </section>

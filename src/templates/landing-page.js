@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Link, graphql } from 'gatsby'
 
-import LandingLayout from '../components/LandingLayout'
+import LayoutLanding from '../components/LayoutLanding'
 
 export const LandingPageTemplate = ({
   title,
@@ -32,7 +32,7 @@ const LandingPage = ({ data }) => {
   const { pageRef } = data
 
   return (
-    <LandingLayout pageRef={pageRef} backgroundClass="PageBackground--landing">
+    <LayoutLanding pageRef={pageRef} backgroundClass="PageBackground--landing">
       <LandingPageTemplate
         image={frontmatter.image}
         title={frontmatter.title}
@@ -40,7 +40,7 @@ const LandingPage = ({ data }) => {
         ctaPrimary={frontmatter.ctaPrimary}
         ctaSecondary={frontmatter.ctaSecondary}
       />
-    </LandingLayout>
+    </LayoutLanding>
   )
 }
 

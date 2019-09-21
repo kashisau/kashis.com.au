@@ -1,0 +1,110 @@
+.FloatingNav {
+  position: absolute;
+  top: 20px;
+  left: 0;
+  min-width: 560px;
+  margin: 0;
+  padding: 2.5em 4em 2.5em calc((100vw - 1640px)/2);
+  z-index: 2;
+  transform-origin: 120px center;
+  margin-left: -60px;
+}
+
+.logoLockup {
+  position: relative;
+  text-decoration: none;
+  display: grid;
+  grid-template-columns: 112px 296px;
+  column-gap: 8px;
+  z-index: 4;
+  float: right;
+  clear: none;
+
+}
+
+.logo {
+  width: 100%;
+  justify-self: right;
+}
+.logoType {
+  justify-self: left;
+  text-shadow: 1px 1px 6px rgba(0,0,0,0.45);
+  padding: 0;
+  margin: 0;
+  text-transform: none;
+  color: #fff;
+  display: inline;
+  line-height: 1;
+  font-size: 1.5em;
+  line-height: .85;
+  word-spacing: 100vw;
+  font-family: Merriweather Sans,sans-serif;
+  letter-spacing: -.08em;
+  font-size: 3em;
+  font-style: normal;
+  font-weight: 800;
+}
+
+.background {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 3;
+}
+
+.navBackground {
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+  transition: opacity 400ms linear;
+  box-shadow: 0 0 20px rgba(0,0,0,0.32);
+}
+
+.landing {
+  composes: navBackground;
+  background-color: transparent;
+  box-shadow: 0 0 20px rgba(0,0,0,0.0);
+}
+
+.latest {
+  composes: navBackground;
+  background-color: #557A9B;
+}
+
+.previousWork {
+  composes: navBackground;
+  background-color: #DDE6EB;
+}
+
+.photography {
+  composes: navBackground;
+  background-color: #557A9B;
+}
+
+.contact {
+  composes: navBackground;
+  background-color: #557A9B;
+}
+
+.fromlatest, .frompreviousWork, .fromphotography, .fromcontact {
+  z-index: 4;
+  transition: opacity 0s ease-in-out;
+  transition-delay: 400ms;
+}
+
+.tolatest, .topreviousWork, .tophotography, .tocontact {
+  z-index: 5;
+  transition: opacity 400ms linear;
+}
+
+.tolanding {
+  transition-delay: 0;
+  transition: none;
+}

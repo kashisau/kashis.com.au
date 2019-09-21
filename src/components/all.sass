@@ -10,71 +10,14 @@ $primary-invert: $kaldi-red-invert
 $body-color: #333
 $black: #2b2523
 
+html
+  height: 100vh
+  overflow: hidden
+
 body
   padding: 0
   margin: 0
   width: 100vw
-  min-height: 100vh
-  scroll-snap-type: mandatory
-  scroll-snap-points-y: repeat(100vh)
-  scroll-snap-type: y mandatory
-
-
-.PageContainer
-  width: 100vw
-  min-height: 100vh
-
-.PageLayout
-  max-width: 100vw
-  min-height: 100vh
-  padding: 0
-  scroll-snap-align: start
-  z-index: 1
-  position: sticky
-  display: grid;
-  grid-template-columns: repeat(12, 12fr)
-  grid-column-gap: 16px
-  max-width: 1640px
-  margin: 0 auto
-
-.PageBackgrounds
-  padding: 0
-  margin: 0
-  position: fixed
-  display: block
-  left: 0
-  top: 0
-  right: 0
-  bottom: 0
-  z-index: 0
-
-.PageBackground
-  padding: 0
-  margin: 0
-  position: absolute
-  top: 0
-  left: 0
-  right: 0
-  bottom: 0
-  opacity: 0
-
-.PageBackground--landing
-  background-image: url(/img/landing-hero.jpg)
-  background-size: cover
-  opacity: 1
-
-.PageBackground--landing::before
-  content: " "
-  display: block
-  position: absolute
-  left: 0
-  right: 0
-  top: 0
-  bottom: 0
-  background-color: rgba(21, 23, 23, 0.45)
-
-.PageBackground--latest
-  background-color: rgba(255, 255, 255, 1)
-
-.PageBackground--previous-work
-  background-color: rgba(85, 122, 155, 1)
+  height: 100vh
+  overflow: hidden
+  

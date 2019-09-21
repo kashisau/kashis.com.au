@@ -2,12 +2,15 @@ import React, { useRef, useEffect, useState } from 'react'
 import { graphql } from 'gatsby'
 
 import Layout from '../components/Layout'
-import LatestPage from '../templates/latest-page'
+
 import LandingPage from '../templates/landing-page'
+import LatestPage from '../templates/latest-page'
 import PreviousWorkPage from '../templates/previous-work-page'
 import PhotographyPage from '../templates/photography-page'
 import ContactPage from '../templates/contact-page'
+
 import PageBackground from '../components/PageBackground'
+import FloatingNav from '../components/FloatingNav'
 
 export const CombinedPageTemplate = ({contactPageData, photographyPageData, previousWorkPageData, latestPageData, landingPageData}) => (
   <>
@@ -71,7 +74,6 @@ const CombinedPage = ({ data }) => {
 
   return (
     <Layout>
-      <div className="PageContainer">
         <CombinedPageTemplate
           landingPageData={landingFrontmatter}
           latestPageData={latestFrontmatter}
@@ -79,8 +81,8 @@ const CombinedPage = ({ data }) => {
           photographyPageData={photographyFrontmatter}
           contactPageData={contactFrontmatter}
         />
+        <FloatingNav pages={pages.current} />
         <PageBackground pages={pages.current} />
-      </div>
     </Layout>
   )
 }

@@ -1,0 +1,3 @@
+.LayoutLanding {
+  composes: PageLayout from '../layouts.module.css';
+}

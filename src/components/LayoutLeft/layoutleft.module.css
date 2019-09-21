@@ -1,0 +1,3 @@
+.LayoutLeft {
+  composes: PageLayout from '../layouts.module.css';
+}
