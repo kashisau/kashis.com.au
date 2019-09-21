@@ -5,6 +5,7 @@ import { Link, graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import LatestPage from './latest-page'
 import LandingPage from './landing-page'
+import PageBackground from '../components/PageBackground'
 
 export const CombinedPageTemplate = ({latestPageData, landingPageData}) => (
   <>
@@ -18,8 +19,8 @@ const CombinedPage = ({ data }) => {
 
   const pages = useRef(
     [
-      {name: 'landing', ref: useRef()},
-      {name: 'latest', ref: useRef()},
+      {name: 'landing', intersectionRatio: 1, ref: useRef(), backgroundRef: useRef()},
+      {name: 'latest', intersectionRatio: 0, ref: useRef(), backgroundRef: useRef()},
     ]
   )
 
@@ -51,14 +52,21 @@ const CombinedPage = ({ data }) => {
     [pages]
   )
 
-  const activePage = pagesIntersection.reduce(
-    intersection => (intersection.intersectionRatio === 1)? intersection.target : false
-  ).target || undefined
+  pagesIntersection.forEach(
+    pageIntersectionEvent => {
+      const page = pages.current.find(({ ref : { current }}) => current === pageIntersectionEvent.target)
+      page.intersectionRatio = pageIntersectionEvent.intersectionRatio
+    }
+  )
 
-  // activePage && updateActivePageName()
-  // activePage && console.log("activePage: ", pages.current.find(({ ref : { current }}) => current === activePage).name)
+  // const activePage = pagesIntersection.reduce(
+  //   intersection => (intersection.intersectionRatio === 1)? intersection.target : false
+  // ).target || undefined
+
+  // // activePage && updateActivePageName()
+  // // activePage && console.log("activePage: ", pages.current.find(({ ref : { current }}) => current === activePage).name)
   
-  const activePageName = activePage && pages.current.find(({ ref : { current }}) => current === activePage).name
+  // const activePageName = activePage && pages.current.find(({ ref : { current }}) => current === activePage).name
 
   return (
     <Layout>
@@ -67,10 +75,7 @@ const CombinedPage = ({ data }) => {
           landingPageData={landingFrontmatter}
           latestPageData={latestFrontmatter}
         />
-        <div className={`PageBackgrounds is${activePageName || 'landing islatest'}`}>
-          <div className="PageBackground PageBackground--landing"></div>
-          <div className="PageBackground PageBackground--latest"></div>
-        </div>
+        <PageBackground pages={pages.current} />
       </div>
     </Layout>
   )
