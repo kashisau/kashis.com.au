@@ -1,0 +1,50 @@
+.pageBackgrounds {
+  padding: 0;
+  margin: 0;
+  position: fixed;
+  display: block;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+}
+
+.pageBackground {
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+}
+
+.landing {
+  composes: pageBackground;
+  background-image: url(/img/landing-hero.jpg);
+  background-size: cover;
+  opacity: 1;
+}
+
+.landing::before {
+  content: " ";
+  display: block;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: rgba(21, 23, 23, 0.45);
+}
+
+.latest {
+  composes: pageBackground;
+  background-color: rgba(255, 255, 255, 1);
+}
+
+.previousWork {
+  composes: pageBackground;
+  background-color: rgba(85, 122, 155, 1);
+}

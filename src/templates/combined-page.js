@@ -5,12 +5,14 @@ import { Link, graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import LatestPage from './latest-page'
 import LandingPage from './landing-page'
+import PreviousWorkPage from './previous-work-page'
 import PageBackground from '../components/PageBackground'
 
-export const CombinedPageTemplate = ({latestPageData, landingPageData}) => (
+export const CombinedPageTemplate = ({previousWorkPageData, latestPageData, landingPageData}) => (
   <>
     <LandingPage data={{...landingPageData}} />
     <LatestPage data={{...latestPageData}} />
+    <PreviousWorkPage data={{...previousWorkPageData}} />
   </>
 )
 
@@ -21,14 +23,15 @@ const CombinedPage = ({ data }) => {
     [
       {name: 'landing', intersectionRatio: 1, ref: useRef(), backgroundRef: useRef()},
       {name: 'latest', intersectionRatio: 0, ref: useRef(), backgroundRef: useRef()},
+      {name: 'previousWork', intersectionRatio: 0, ref: useRef(), backgroundRef: useRef()},
     ]
   )
 
   const [pagesIntersection, updatePagesIntersection] = useState([{}])
-  // const [activePageName, updateActivePageName] = useState(pages.current[0].name)
 
   const landingFrontmatter = { markdownRemark: frontmatter.landingMarkdownFile.childMarkdownRemark, pageRef: pages.current[0].ref }
   const latestFrontmatter = { markdownRemark: frontmatter.latestMarkdownFile.childMarkdownRemark, pageRef: pages.current[1].ref }
+  const previousWorkFrontmatter = { markdownRemark: frontmatter.previousWorkMarkdownFile.childMarkdownRemark, pageRef: pages.current[2].ref }
 
   const observer = useRef();
 
@@ -38,7 +41,7 @@ const CombinedPage = ({ data }) => {
       observer.current = new window.IntersectionObserver(
         (entries) => updatePagesIntersection(entries),
         {
-          threshold: [...Array(21).keys()].map((p, q) => q/20)
+          threshold: [...Array(101).keys()].map((p, q) => q/100)
         }
       )
       const currentObserver = observer.current
@@ -59,21 +62,13 @@ const CombinedPage = ({ data }) => {
     }
   )
 
-  // const activePage = pagesIntersection.reduce(
-  //   intersection => (intersection.intersectionRatio === 1)? intersection.target : false
-  // ).target || undefined
-
-  // // activePage && updateActivePageName()
-  // // activePage && console.log("activePage: ", pages.current.find(({ ref : { current }}) => current === activePage).name)
-  
-  // const activePageName = activePage && pages.current.find(({ ref : { current }}) => current === activePage).name
-
   return (
     <Layout>
       <div className="PageContainer">
         <CombinedPageTemplate
           landingPageData={landingFrontmatter}
           latestPageData={latestFrontmatter}
+          previousWorkPageData={previousWorkFrontmatter}
         />
         <PageBackground pages={pages.current} />
       </div>
@@ -136,6 +131,42 @@ export const pageQuery = graphql`
                 btnText
                 url
                 title
+              }
+            }
+          }
+        }
+        previousWorkMarkdownFile {
+          childMarkdownRemark {
+            frontmatter {
+              title
+              description
+              image {
+                childImageSharp {
+                  fluid(maxWidth: 2048, quality: 100) {
+                    ...GatsbyImageSharpFluid
+                  }
+                }
+              }
+              body
+              ctaPrimary {
+                btnText
+                url
+                title
+              }
+              ctaSecondary {
+                btnText
+                url
+                title
+              }
+              ctaTertiary {
+                btnText
+                url
+                title
+              }
+              works {
+                title
+                blurb
+                image
               }
             }
           }

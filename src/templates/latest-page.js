@@ -37,7 +37,7 @@ const LatestPage = ({ data }) => {
   const { pageRef } = data
 
   return (
-    <LayoutLeft heading={frontmatter.title} pageRef={pageRef} backgroundClass="PageBackground--latest">
+    <LayoutLeft heading={frontmatter.title} pageRef={pageRef}>
       <LatestPageTemplate
         image={frontmatter.image}
         subheading={frontmatter.subheading}
