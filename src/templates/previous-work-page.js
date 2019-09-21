@@ -4,6 +4,7 @@ import { graphql } from 'gatsby'
 import Img from 'gatsby-image'
 
 import LayoutRight from '../components/LayoutRight'
+import styles from './pagestyles.module.css'
 
 export const PreviousWorkPageTemplate = ({
   title,
@@ -61,7 +62,7 @@ const PreviousWorkPage = ({ data }) => {
   const { pageRef } = data
 
   return (
-    <LayoutRight heading={frontmatter.title} pageRef={pageRef}>
+    <LayoutRight heading={frontmatter.title} headingStyle={styles.previousWorkHeading} pageRef={pageRef}>
       <PreviousWorkPageTemplate
         image={frontmatter.image}
         subheading={frontmatter.subheading}

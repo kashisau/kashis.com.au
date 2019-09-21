@@ -12,15 +12,14 @@ import ContactPage from '../templates/contact-page'
 import PageBackground from '../components/PageBackground'
 import FloatingNav from '../components/FloatingNav'
 
-export const CombinedPageTemplate = ({contactPageData, photographyPageData, previousWorkPageData, latestPageData, landingPageData}) => (
+export const CombinedPageTemplate = ({contactPageData, photographyPageData, previousWorkPageData, latestPageData, landingPageData}) =>
   <>
-    <LandingPage data={{...landingPageData}} />
+    <LandingPage page={landingPageData.page} data={{...landingPageData}} />
     <LatestPage data={{...latestPageData}} />
     <PreviousWorkPage data={{...previousWorkPageData}} />
     <PhotographyPage data={{...photographyPageData}} />
     <ContactPage data={{...contactPageData}} />
   </>
-)
 
 const CombinedPage = ({ data }) => {
   const { frontmatter } = data.markdownRemark
@@ -75,7 +74,7 @@ const CombinedPage = ({ data }) => {
   return (
     <Layout>
         <CombinedPageTemplate
-          landingPageData={landingFrontmatter}
+          landingPageData={{page: pages.current[0], ...landingFrontmatter}}
           latestPageData={latestFrontmatter}
           previousWorkPageData={previousWorkFrontmatter}
           photographyPageData={photographyFrontmatter}

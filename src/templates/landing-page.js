@@ -5,6 +5,7 @@ import { Link, graphql } from 'gatsby'
 import LayoutLanding from '../components/LayoutLanding'
 
 export const LandingPageTemplate = ({
+  intersectionRatio,
   title,
   description,
   image,
@@ -12,7 +13,7 @@ export const LandingPageTemplate = ({
   ctaPrimary,
   ctaSecondary
 }) => (
-  <p dangerouslySetInnerHTML={{ __html: heroText }} />
+  <></>
 )
 
 LandingPageTemplate.propTypes = {
@@ -27,13 +28,15 @@ LandingPageTemplate.propTypes = {
   }),
 }
 
-const LandingPage = ({ data }) => {
+const LandingPage = ({ data, page }) => {
   const { frontmatter } = data.markdownRemark
   const { pageRef } = data
+  const { intersectionRatio } = page
 
   return (
-    <LayoutLanding pageRef={pageRef} heroText={frontmatter.heroText} backgroundClass="PageBackground--landing">
+    <LayoutLanding pageRef={pageRef} heroText={frontmatter.heroText} intersectionRatio={intersectionRatio} backgroundClass="PageBackground--landing">
       <LandingPageTemplate
+        intersectionRatio={intersectionRatio}
         image={frontmatter.image}
         title={frontmatter.title}
         heroText={frontmatter.heroText}

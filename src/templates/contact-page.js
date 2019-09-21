@@ -4,6 +4,7 @@ import { graphql } from 'gatsby'
 import Img from 'gatsby-image'
 
 import LayoutRight from '../components/LayoutRight'
+import styles from './pagestyles.module.css'
 
 export const ContactPageTemplate = ({
   title,
@@ -12,19 +13,19 @@ export const ContactPageTemplate = ({
   phone,
   sections,
 }) => 
-  <main>
+  <>
     {sections.map(
-      section => <section>
+      (section, i) => <section className={styles.contactSection} key={i}>
         <h2>{section.sectionTitle}</h2>
         {section.links.map(
-          link => <section>
+          (link, i) => <section key={i}>
               <p dangerouslySetInnerHTML={{ __html: link.blurb }} />
               <a href={link.url} title={link.title}>{link.btnText}</a>
             </section>
         )}
       </section>
     )}
-    <section>
+    <section className={styles.contactSection}>
       <h2>Connect</h2>
       <p>Finally, if you wish to contact me for any other reason, you may send me an email or reach out via phone:</p>
       <h3>Email</h3>
@@ -32,7 +33,7 @@ export const ContactPageTemplate = ({
       <h3>Phone</h3>
       <p>{phone}</p>
     </section>
-  </main>
+  </>
 
 ContactPageTemplate.propTypes = {
   title: PropTypes.string,
@@ -55,7 +56,7 @@ const ContactPage = ({ data }) => {
   const { pageRef } = data
 
   return (
-    <LayoutRight heading={frontmatter.title} pageRef={pageRef}>
+    <LayoutRight heading={frontmatter.title} headingStyle={styles.contactHeading} pageRef={pageRef}>
       <ContactPageTemplate
         description={frontmatter.description}
         email={frontmatter.email}

@@ -7,17 +7,21 @@
 }
 
 .main {
-  grid-column: 1 / 4;
+  grid-column: 1 / 12;
+  display: grid;
+  grid-template-columns: repeat(12, 12fr);
+  column-gap: 2em;
 }
 
 .heading {
   font-family: Heebo, sans-serif;
   font-weight: 800;
   font-size: 10em;
-  letter-spacing: -0.07em;
+  letter-spacing: -0.08em;
   text-transform: uppercase;
   overflow-x: visible;
   white-space: nowrap;
-  margin: 0.5em 0 0 0;
+  margin: 0.75em 0 0 0;
   text-align: right;
+  line-height: 1;
 }

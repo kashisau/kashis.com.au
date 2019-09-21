@@ -4,6 +4,7 @@ import { graphql } from 'gatsby'
 import Img from 'gatsby-image'
 
 import LayoutLeft from '../components/LayoutLeft'
+import styles from './pagestyles.module.css'
 
 export const PhotographyPageTemplate = ({
   title,
@@ -58,7 +59,7 @@ const PhotographyPage = ({ data }) => {
   const { pageRef } = data
 
   return (
-    <LayoutLeft heading={frontmatter.title} pageRef={pageRef}>
+    <LayoutLeft heading={frontmatter.title} headingStyle={styles.photographyHeading} pageRef={pageRef}>
       <PhotographyPageTemplate
         image={frontmatter.image}
         description={frontmatter.description}

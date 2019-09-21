@@ -1,0 +1,29 @@
+.latestHeading {
+  color: #4C5E70;
+}
+.previousWorkHeading {
+  color: #DDE6EB;
+}
+.photographyHeading {
+  color: #557A9B;
+}
+.contactHeading {
+  color: #171517;
+}
+
+.body {
+  grid-column: 1 / 4;
+  grid-row: 1 / 2;
+}
+
+.latestFeaturedImage {
+  grid-column: 4 / 13;
+  grid-row: 1 / 2;
+  margin-top: -4em;
+  box-shadow: 0 0 40px rgba(0,0,0,0.16);
+}
+
+.contactSection {
+  grid-column-start: span 3;
+  grid-row: 1 / 2;
+}

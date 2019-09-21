@@ -1,14 +1,15 @@
 .PageLayout {
   max-width: 100vw;
-  height: 100vh;
+  height: calc(100vh - 2em);
   overflow: hidden;
   padding: 0 5em;
   scroll-snap-align: start;
   z-index: 1;
   position: relative;
   display: grid;
-  grid-template-columns: repeat(12, 12fr);
   column-gap: 16px;
   max-width: 1460px;
-  margin: 0 auto;
+  margin: 0 auto 2em auto;
+  grid-template-columns: repeat(12, 12fr);
+  grid-template-rows: min-content auto;
 }

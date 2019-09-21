@@ -1,12 +1,13 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Link, graphql } from 'gatsby'
+import Img from 'gatsby-image'
 
 import LayoutLeft from '../components/LayoutLeft'
+import styles from './pagestyles.module.css'
 
 export const LatestPageTemplate = ({
   title,
-  subheading,
   description,
   image,
   body,
@@ -14,9 +15,10 @@ export const LatestPageTemplate = ({
   ctaSecondary
 }) => (
   <>
-    <h1>{title}</h1>
-    {subheading && <h2>{subheading}</h2>}
-    <main dangerouslySetInnerHTML={{__html: body}} />
+    <div className={styles.body}>
+      <p dangerouslySetInnerHTML={{__html: body}} />
+    </div>
+    <Img className={styles.latestFeaturedImage} fluid={image.childImageSharp.fluid} title={title} />
   </>
 )
 
@@ -37,7 +39,7 @@ const LatestPage = ({ data }) => {
   const { pageRef } = data
 
   return (
-    <LayoutLeft heading={frontmatter.title} pageRef={pageRef}>
+    <LayoutLeft heading={frontmatter.title} headingStyle={styles.latestHeading} pageRef={pageRef}>
       <LatestPageTemplate
         image={frontmatter.image}
         subheading={frontmatter.subheading}

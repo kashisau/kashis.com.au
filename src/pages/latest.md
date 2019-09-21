@@ -2,7 +2,7 @@
 templateKey: latest-page
 title: Latest project
 description: The latest project that I'm working on
-image: /img/home-jumbotron.jpg
+image: /img/latest-kathmandu.jpg
 subheading: Volunteering
 body: >
   I’m currently living in Kathmandu, Nepal, where I’m applying my professional skills as a IT Officer in Kirtipur Municipality for 12 months, as part of the Australian Volunteers Program.
