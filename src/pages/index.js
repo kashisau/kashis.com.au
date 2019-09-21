@@ -1,13 +1,12 @@
 import React, { useRef, useEffect, useState } from 'react'
-import PropTypes from 'prop-types'
-import { Link, graphql } from 'gatsby'
+import { graphql } from 'gatsby'
 
 import Layout from '../components/Layout'
-import LatestPage from './latest-page'
-import LandingPage from './landing-page'
-import PreviousWorkPage from './previous-work-page'
-import PhotographyPage from './photography-page'
-import ContactPage from './contact-page'
+import LatestPage from '../templates/latest-page'
+import LandingPage from '../templates/landing-page'
+import PreviousWorkPage from '../templates/previous-work-page'
+import PhotographyPage from '../templates/photography-page'
+import ContactPage from '../templates/contact-page'
 import PageBackground from '../components/PageBackground'
 
 export const CombinedPageTemplate = ({contactPageData, photographyPageData, previousWorkPageData, latestPageData, landingPageData}) => (
