@@ -7,14 +7,16 @@ import LatestPage from './latest-page'
 import LandingPage from './landing-page'
 import PreviousWorkPage from './previous-work-page'
 import PhotographyPage from './photography-page'
+import ContactPage from './contact-page'
 import PageBackground from '../components/PageBackground'
 
-export const CombinedPageTemplate = ({photographyPageData, previousWorkPageData, latestPageData, landingPageData}) => (
+export const CombinedPageTemplate = ({contactPageData, photographyPageData, previousWorkPageData, latestPageData, landingPageData}) => (
   <>
     <LandingPage data={{...landingPageData}} />
     <LatestPage data={{...latestPageData}} />
     <PreviousWorkPage data={{...previousWorkPageData}} />
     <PhotographyPage data={{...photographyPageData}} />
+    <ContactPage data={{...contactPageData}} />
   </>
 )
 
@@ -27,6 +29,7 @@ const CombinedPage = ({ data }) => {
       {name: 'latest', intersectionRatio: 0, ref: useRef(), backgroundRef: useRef()},
       {name: 'previousWork', intersectionRatio: 0, ref: useRef(), backgroundRef: useRef()},
       {name: 'photography', intersectionRatio: 0, ref: useRef(), backgroundRef: useRef()},
+      {name: 'contact', intersectionRatio: 0, ref: useRef(), backgroundRef: useRef()},
     ]
   )
 
@@ -36,7 +39,8 @@ const CombinedPage = ({ data }) => {
   const latestFrontmatter = { markdownRemark: frontmatter.latestMarkdownFile.childMarkdownRemark, pageRef: pages.current[1].ref }
   const previousWorkFrontmatter = { markdownRemark: frontmatter.previousWorkMarkdownFile.childMarkdownRemark, pageRef: pages.current[2].ref }
   const photographyFrontmatter = { markdownRemark: frontmatter.photographyMarkdownFile.childMarkdownRemark, pageRef: pages.current[3].ref }
-console.log("Photography frontmatter: ", photographyFrontmatter)
+  const contactFrontmatter = { markdownRemark: frontmatter.contactMarkdownFile.childMarkdownRemark, pageRef: pages.current[4].ref }
+
   const observer = useRef();
 
   useEffect(
@@ -74,6 +78,7 @@ console.log("Photography frontmatter: ", photographyFrontmatter)
           latestPageData={latestFrontmatter}
           previousWorkPageData={previousWorkFrontmatter}
           photographyPageData={photographyFrontmatter}
+          contactPageData={contactFrontmatter}
         />
         <PageBackground pages={pages.current} />
       </div>
@@ -219,6 +224,24 @@ export const pageQuery = graphql`
                       ...GatsbyImageSharpFluid
                     }
                   }
+                }
+              }
+            }
+          }
+        }
+        contactMarkdownFile {
+          childMarkdownRemark {
+            frontmatter {
+              title
+              description
+              email
+              sections {
+                sectionTitle
+                links {
+                  blurb
+                  btnText
+                  title
+                  url
                 }
               }
             }

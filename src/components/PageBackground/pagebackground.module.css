@@ -53,3 +53,8 @@
   composes: pageBackground;
   background-color: rgba(23, 21, 23, 1);
 }
+
+.contact {
+  composes: pageBackground;
+  background-color: rgba(221, 230, 235, 1);
+}
