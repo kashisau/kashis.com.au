@@ -1,3 +1,14 @@
 .LayoutLanding {
   composes: PageLayout from '../layouts.module.css';
 }
+
+.heroText {
+  grid-column: 1 / 11;
+  font-family: Heebo, sans-serif;
+  font-size: 2.5em;
+  color: white;
+  margin-top: 5em;
+  letter-spacing: -0.02em;
+  font-weight: 600;
+  text-shadow: 1px 1px 6px rgba(0,0,0,0.45);
+}

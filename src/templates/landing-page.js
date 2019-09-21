@@ -12,7 +12,7 @@ export const LandingPageTemplate = ({
   ctaPrimary,
   ctaSecondary
 }) => (
-  <p>{heroText}</p>
+  <p dangerouslySetInnerHTML={{ __html: heroText }} />
 )
 
 LandingPageTemplate.propTypes = {
@@ -32,7 +32,7 @@ const LandingPage = ({ data }) => {
   const { pageRef } = data
 
   return (
-    <LayoutLanding pageRef={pageRef} backgroundClass="PageBackground--landing">
+    <LayoutLanding pageRef={pageRef} heroText={frontmatter.heroText} backgroundClass="PageBackground--landing">
       <LandingPageTemplate
         image={frontmatter.image}
         title={frontmatter.title}

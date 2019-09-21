@@ -1,3 +1,23 @@
 .LayoutRight {
   composes: PageLayout from '../layouts.module.css';
 }
+
+.header {
+  grid-column: 1 / 13;
+}
+
+.main {
+  grid-column: 1 / 4;
+}
+
+.heading {
+  font-family: Heebo, sans-serif;
+  font-weight: 800;
+  font-size: 10em;
+  letter-spacing: -0.07em;
+  text-transform: uppercase;
+  overflow-x: visible;
+  white-space: nowrap;
+  margin: 0.5em 0 0 0;
+  text-align: right;
+}

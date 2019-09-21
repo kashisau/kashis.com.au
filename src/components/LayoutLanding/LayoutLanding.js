@@ -1,14 +1,9 @@
 import React from 'react'
 import styles from './layoutlanding.module.css'
 
-const LayoutLanding = ({ pageRef, children }) => 
+const LayoutLanding = ({ pageRef, heroText, children }) => 
   <section className={styles.LayoutLanding} ref={pageRef}>
-    <header>
-      Logotype
-    </header>
-    <main>
-      {children}
-    </main>
+    <p className={styles.heroText} dangerouslySetInnerHTML={{ __html: heroText }} />
   </section>
 
 export default LayoutLanding

@@ -9,6 +9,6 @@
   display: grid;
   grid-template-columns: repeat(12, 12fr);
   column-gap: 16px;
-  max-width: 1640px;
+  max-width: 1460px;
   margin: 0 auto;
 }

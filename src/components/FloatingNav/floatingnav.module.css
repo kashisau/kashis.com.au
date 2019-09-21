@@ -6,7 +6,7 @@
   margin: 0;
   padding: 2.5em 4em 2.5em calc((100vw - 1640px)/2);
   z-index: 2;
-  transform-origin: 120px center;
+  transform-origin: 120px top;
   margin-left: -60px;
 }
 
