@@ -12,7 +12,7 @@ export const ContactPageTemplate = ({
   phone,
   sections,
 }) => 
-  <>
+  <main>
     {sections.map(
       section => <section>
         <h2>{section.sectionTitle}</h2>
@@ -24,7 +24,15 @@ export const ContactPageTemplate = ({
         )}
       </section>
     )}
-  </>
+    <section>
+      <h2>Connect</h2>
+      <p>Finally, if you wish to contact me for any other reason, you may send me an email or reach out via phone:</p>
+      <h3>Email</h3>
+      <p>{email}</p>
+      <h3>Phone</h3>
+      <p>{phone}</p>
+    </section>
+  </main>
 
 ContactPageTemplate.propTypes = {
   title: PropTypes.string,
@@ -75,6 +83,7 @@ export const pageQuery = graphql`
         title
         description
         email
+        phone
         sections {
           sectionTitle
           links {

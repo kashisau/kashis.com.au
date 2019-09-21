@@ -235,6 +235,7 @@ export const pageQuery = graphql`
               title
               description
               email
+              phone
               sections {
                 sectionTitle
                 links {
