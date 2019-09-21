@@ -6,13 +6,15 @@ import Layout from '../components/Layout'
 import LatestPage from './latest-page'
 import LandingPage from './landing-page'
 import PreviousWorkPage from './previous-work-page'
+import PhotographyPage from './photography-page'
 import PageBackground from '../components/PageBackground'
 
-export const CombinedPageTemplate = ({previousWorkPageData, latestPageData, landingPageData}) => (
+export const CombinedPageTemplate = ({photographyPageData, previousWorkPageData, latestPageData, landingPageData}) => (
   <>
     <LandingPage data={{...landingPageData}} />
     <LatestPage data={{...latestPageData}} />
     <PreviousWorkPage data={{...previousWorkPageData}} />
+    <PhotographyPage data={{...photographyPageData}} />
   </>
 )
 
@@ -24,6 +26,7 @@ const CombinedPage = ({ data }) => {
       {name: 'landing', intersectionRatio: 1, ref: useRef(), backgroundRef: useRef()},
       {name: 'latest', intersectionRatio: 0, ref: useRef(), backgroundRef: useRef()},
       {name: 'previousWork', intersectionRatio: 0, ref: useRef(), backgroundRef: useRef()},
+      {name: 'photography', intersectionRatio: 0, ref: useRef(), backgroundRef: useRef()},
     ]
   )
 
@@ -32,7 +35,8 @@ const CombinedPage = ({ data }) => {
   const landingFrontmatter = { markdownRemark: frontmatter.landingMarkdownFile.childMarkdownRemark, pageRef: pages.current[0].ref }
   const latestFrontmatter = { markdownRemark: frontmatter.latestMarkdownFile.childMarkdownRemark, pageRef: pages.current[1].ref }
   const previousWorkFrontmatter = { markdownRemark: frontmatter.previousWorkMarkdownFile.childMarkdownRemark, pageRef: pages.current[2].ref }
-
+  const photographyFrontmatter = { markdownRemark: frontmatter.photographyMarkdownFile.childMarkdownRemark, pageRef: pages.current[3].ref }
+console.log("Photography frontmatter: ", photographyFrontmatter)
   const observer = useRef();
 
   useEffect(
@@ -69,6 +73,7 @@ const CombinedPage = ({ data }) => {
           landingPageData={landingFrontmatter}
           latestPageData={latestFrontmatter}
           previousWorkPageData={previousWorkFrontmatter}
+          photographyPageData={photographyFrontmatter}
         />
         <PageBackground pages={pages.current} />
       </div>
@@ -166,7 +171,55 @@ export const pageQuery = graphql`
               works {
                 title
                 blurb
-                image
+                image {
+                  childImageSharp {
+                    fluid(maxWidth: 2048, quality: 100) {
+                      ...GatsbyImageSharpFluid
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+        photographyMarkdownFile {
+          childMarkdownRemark {
+            frontmatter {
+              title
+              description
+              image {
+                childImageSharp {
+                  fluid(maxWidth: 2048, quality: 100) {
+                    ...GatsbyImageSharpFluid
+                  }
+                }
+              }
+              body
+              ctaPrimary {
+                btnText
+                url
+                title
+              }
+              ctaSecondary {
+                btnText
+                url
+                title
+              }
+              ctaTertiary {
+                btnText
+                url
+                title
+              }
+              photos {
+                title
+                blurb
+                image {
+                  childImageSharp {
+                    fluid(maxWidth: 2048, quality: 100) {
+                      ...GatsbyImageSharpFluid
+                    }
+                  }
+                }
               }
             }
           }

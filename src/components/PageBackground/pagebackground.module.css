@@ -48,3 +48,8 @@
   composes: pageBackground;
   background-color: rgba(85, 122, 155, 1);
 }
+
+.photography {
+  composes: pageBackground;
+  background-color: rgba(23, 21, 23, 1);
+}

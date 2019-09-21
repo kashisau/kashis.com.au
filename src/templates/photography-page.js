@@ -3,33 +3,30 @@ import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import Img from 'gatsby-image'
 
-import LayoutRight from '../components/LayoutRight'
+import LayoutLeft from '../components/LayoutLeft'
 
-export const PreviousWorkPageTemplate = ({
+export const PhotographyPageTemplate = ({
   title,
-  subheading,
   body,
   ctaPrimary,
   ctaSecondary,
   ctaTertiary,
-  works,
-}) => (
+  photos,
+}) => 
   <>
     <h1>{title}</h1>
-    {subheading && <h2>{subheading}</h2>}
     <main dangerouslySetInnerHTML={{__html: body}} />
-    {works.map(
-      (work, i) =>
+    {photos.map(
+      (photo, i) =>
         <aside key={i}>
-          <h2>{work.title}</h2>
-          <Img fluid={work.image.childImageSharp.fluid} title={`Screenshot of ${work.title}`} />
-          <p dangerouslySetInnerHTML={{__html: work.blurb}} />
+          <h2>{photo.title}</h2>
+          <Img fluid={photo.image.childImageSharp.fluid} title={`Screenshot of ${photo.title}`} />
+          <p dangerouslySetInnerHTML={{__html: photo.blurb}} />
         </aside>
     )}
   </>
-)
 
-PreviousWorkPageTemplate.propTypes = {
+PhotographyPageTemplate.propTypes = {
   image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   title: PropTypes.string,
   description: PropTypes.string,
@@ -49,34 +46,33 @@ PreviousWorkPageTemplate.propTypes = {
     url: PropTypes.string,
     title: PropTypes.string
   }),
-  works: PropTypes.arrayOf(PropTypes.shape({
+  photos: PropTypes.arrayOf(PropTypes.shape({
     title: PropTypes.string,
     blurb: PropTypes.string,
     image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   }))
 }
 
-const PreviousWorkPage = ({ data }) => {
+const PhotographyPage = ({ data }) => {
   const { frontmatter } = data.markdownRemark
   const { pageRef } = data
 
   return (
-    <LayoutRight heading={frontmatter.title} pageRef={pageRef}>
-      <PreviousWorkPageTemplate
+    <LayoutLeft heading={frontmatter.title} pageRef={pageRef}>
+      <PhotographyPageTemplate
         image={frontmatter.image}
-        subheading={frontmatter.subheading}
         description={frontmatter.description}
         body={frontmatter.body}
         ctaPrimary={frontmatter.ctaPrimary}
         ctaSecondary={frontmatter.ctaSecondary}
         ctaTertiary={frontmatter.ctaTertiary}
-        works={frontmatter.works}
+        photos={frontmatter.photos}
       />
-    </LayoutRight>
+    </LayoutLeft>
   )
 }
 
-PreviousWorkPage.propTypes = {
+PhotographyPage.propTypes = {
   data: PropTypes.shape({
     markdownRemark: PropTypes.shape({
       frontmatter: PropTypes.object,
@@ -84,11 +80,11 @@ PreviousWorkPage.propTypes = {
   }),
 }
 
-export default PreviousWorkPage
+export default PhotographyPage
 
 export const pageQuery = graphql`
-  query PreviousWorkPageTemplate {
-    markdownRemark(frontmatter: { templateKey: { eq: "previous-work-page" } }) {
+  query PhotographyPageTemplate {
+    markdownRemark(frontmatter: { templateKey: { eq: "photography-page" } }) {
       frontmatter {
         title
         description
@@ -115,7 +111,7 @@ export const pageQuery = graphql`
           url
           title
         }
-        works {
+        photos {
           title
           blurb
           image {

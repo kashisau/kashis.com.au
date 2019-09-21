@@ -64,6 +64,19 @@ collections:
           - {label: "Secondary CTA", name: ctaSecondary, widget: object, fields: [{label: "Button text", name: btnText, widget: string}, {label: URL, name: url, widget: string}, {label: "Title", name: title, widget: string}]}
           - {label: "Tertiary CTA", name: ctaTertiary, widget: object, fields: [{label: "Button text", name: btnText, widget: string}, {label: URL, name: url, widget: string}, {label: "Title", name: title, widget: string}]}
           - {label: "Featured works", name: works, widget: list, fields: [{label: "Title", name: "title", widget: "string"}, {label: "Blurb", name: "blurb", widget: "text"}, {label: "Featured Image", name: "image", widget: image}}
+      - file: "src/pages/photography.md"
+        label: "Photography"
+        name: "photography"
+        fields:
+          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "photography-page"}
+          - {label: Title, name: title, widget: string}
+          - {label: Description, name: description, widget: string}
+          - {label: Image, name: image, widget: image}
+          - {label: "Body copy", name: body, widget: text}
+          - {label: "Primary CTA", name: ctaPrimary, widget: object, fields: [{label: "Button text", name: btnText, widget: string}, {label: URL, name: url, widget: string}, {label: "Title", name: title, widget: string}]}
+          - {label: "Secondary CTA", name: ctaSecondary, widget: object, fields: [{label: "Button text", name: btnText, widget: string}, {label: URL, name: url, widget: string}, {label: "Title", name: title, widget: string}]}
+          - {label: "Tertiary CTA", name: ctaTertiary, widget: object, fields: [{label: "Button text", name: btnText, widget: string}, {label: URL, name: url, widget: string}, {label: "Title", name: title, widget: string}]}
+          - {label: "Featured photos", name: photos, widget: list, fields: [{label: "Title", name: "title", widget: "string"}, {label: "Blurb", name: "blurb", widget: "text"}, {label: "Featured Image", name: "image", widget: image}}
       - file: "src/pages/index.md"
         label: "Landing Page"
         name: "index"
