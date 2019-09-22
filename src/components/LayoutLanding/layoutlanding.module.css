@@ -1,5 +1,6 @@
 .LayoutLanding {
   composes: PageLayout from '../layouts.module.css';
+  min-height: 100vh;
 }
 
 .heroText {

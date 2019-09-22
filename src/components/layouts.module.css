@@ -1,20 +1,27 @@
 .PageLayout {
-  height: calc(100vh - 2em);
-  padding: 0 5em;
+  padding: 0 2em;
   z-index: 1;
   display: grid;
   column-gap: 1em;
   max-width: 91.25em;
   margin: 0 auto 2em auto;
-  grid-template-columns: repeat(12, 12fr);
-  grid-template-rows: min-content calc(100vh - 19.5em);
-  scroll-snap-align: start;
+  grid-template-columns: 3fr 1fr;
+  grid-template-rows: min-content auto;
+}
+
+@media (min-width: 768px) {
+  .PageLayout {
+    padding: 0 5em;
+    height: calc(100vh - 2em);
+    grid-template-rows: min-content calc(100vh - 19.5em);
+    scroll-snap-align: start;
+  }
 }
 
 .pageHeading {
   font-family: Heebo, sans-serif;
   font-weight: 900;
-  font-size: 10em;
+  font-size: 5em;
   letter-spacing: -0.08em;
   text-transform: uppercase;
   overflow-x: visible;
@@ -23,11 +30,21 @@
   line-height: 1;
 }
 
+@media (min-width: 768px) {
+  .pageHeading {
+    font-size: 10em;
+  }
+}
+
 .pageLayoutMain {
-  max-height: calc(100vh - 17.5em);
-  
-  grid-column: 1 / 13;
   display: grid;
-  grid-template-columns: repeat(12, 12fr);
+  grid-column: 1 / 3;
   column-gap: 2em;
+}
+
+@media (min-width: 768px) {
+  .pageLayoutMain {
+    max-height: calc(100vh - 17.5em);
+    grid-template-columns: 1fr 1fr;
+  }
 }

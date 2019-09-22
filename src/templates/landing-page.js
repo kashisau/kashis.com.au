@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import { Link, graphql } from 'gatsby'
 
 import LayoutLanding from '../components/LayoutLanding'
+import styles from './pagestyles.module.css'
 
 export const LandingPageTemplate = ({
   intersectionRatio,
@@ -13,7 +14,12 @@ export const LandingPageTemplate = ({
   ctaPrimary,
   ctaSecondary
 }) => (
-  <></>
+  <>
+    {[ctaPrimary, ctaSecondary].map(
+      (cta, i) =>
+        cta && <a className={[styles.buttonLink, i!==0? styles.buttonLinkSecondaryDark : styles.buttonLinkDark].join(' ')} href={cta.url} title={cta.title}>{cta.btnText}</a>
+    )}
+  </>
 )
 
 LandingPageTemplate.propTypes = {

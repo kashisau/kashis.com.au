@@ -11,26 +11,55 @@
   color: #171517;
 }
 
+.layout4 {
+  
+}
+@media (min-width: 768px) {
+  .layout4 {
+    grid-template-columns: repeat(12, 12fr);
+  }
+}
+
 .body {
-  grid-column: 1 / 4;
-  grid-row: 1 / 2;
+  grid-column: 1 / 1;
+  grid-row: 2 / 3;
   font-size: 1.25em;
+}
+@media (min-width: 768px) {
+  .body {
+    grid-column: 1 / 1;
+    grid-row: 1 / 2;
+  }  
 }
 
 .bodyRight {
-  grid-column: 9 / 13;
-  grid-row: 1 / 2;
   font-size: 1.25em;
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
 }
+@media (min-width: 768px) {
+  .bodyRight {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;  
+  }  
+}
+
 
 .lightText {
   color: #ffffff;
 }
 
 .leftFeature {
-  grid-column: 1 / 9;
+  grid-column: 1 / 2;
   grid-row: 1 / 2;
-  margin-top: -4.5em;
+}
+
+@media (min-width: 768px) {
+  .leftFeature {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    margin-top: -4.5em;
+  }
 }
 
 .leftFeature4x4 {
@@ -89,16 +118,26 @@
 }
 
 .latestFeaturedImage {
-  grid-column: 4 / 13;
+  grid-column: 1 / 2;
   grid-row: 1 / 2;
-  margin-top: -5em;
   box-shadow: 0 0 40px rgba(0,0,0,0.16);
 }
 
-.contactSection {
-  grid-column-start: span 3;
-  grid-row: 1 / 2;
+@media (min-width: 768px) {
+  .latestFeaturedImage {
+    margin-top: -4.5em;
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;  
+  }
 }
+
+@media (min-width: 768px) {
+  .contactSection {
+    grid-column-start: span 3;
+    grid-row: 1 / 2;
+  }
+}
+
 
 .buttonLink {
   text-decoration: none;

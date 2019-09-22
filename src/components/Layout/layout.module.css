@@ -1,7 +1,12 @@
 .pageContainer {
   width: 100vw;
-  height: 100vh;
-  overflow-y: scroll;
-  overflow-x: hidden;
-  scroll-snap-type: y mandatory;
+}
+
+@media (min-width: 768px) {
+  .pageContainer {
+    height: 100vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    scroll-snap-type: y mandatory;
+  }
 }

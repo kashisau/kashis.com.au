@@ -17,6 +17,10 @@ export const LatestPageTemplate = ({
   <>
     <div className={styles.body}>
       <p dangerouslySetInnerHTML={{__html: body}} />
+      {[ctaPrimary, ctaSecondary].map(
+        (cta, i) =>
+          cta && <a className={[styles.buttonLink, i!==0? styles.buttonLinkSecondaryDark : styles.buttonLinkDark].join(' ')} href={cta.url} title={cta.title}>{cta.btnText}</a>
+      )}
     </div>
     <Img className={styles.latestFeaturedImage} fluid={image.childImageSharp.fluid} title={title} />
   </>

@@ -59,6 +59,7 @@ const ContactPage = ({ data }) => {
     <LayoutRight
       heading={frontmatter.title}
       headingStyle={styles.contactHeading}
+      layoutStyle={styles.layout4}
       page={page}
       pageRef={pageRef}>
       <ContactPageTemplate

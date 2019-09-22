@@ -40,7 +40,7 @@ collections:
           - {label: Subheading, name: subheading, widget: string, required: false}
           - {label: "Body copy", name: body, widget: text}
           - {label: "Primary CTA", name: ctaPrimary, widget: object, fields: [{label: "Button text", name: btnText, widget: string}, {label: URL, name: url, widget: string}, {label: "Title", name: title, widget: string}]}
-          - {label: "Secondary CTA", name: ctaSecondary, widget: object, fields: [{label: "Button text", name: btnText, widget: string}, {label: URL, name: url, widget: string}, {label: "Title", name: title, widget: string}]}
+          - {label: "Secondary CTA", name: ctaSecondary, widget: object, fields: [{label: "Button text", name: btnText, widget: string}, {label: URL, name: url, widget: string}, {label: "Title", name: title, widget: string}], required: false}
       - file: "src/pages/previous-work.md"
         label: "Previous work"
         name: "previous-work"
