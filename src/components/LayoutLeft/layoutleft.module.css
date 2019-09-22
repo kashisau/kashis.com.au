@@ -1,5 +1,6 @@
 .LayoutLeft {
   composes: PageLayout from '../layouts.module.css';
+  max-width: 109.25em;
 }
 
 .header {
@@ -7,20 +8,9 @@
 }
 
 .main {
-  grid-column: 1 / 13;
-  display: grid;
-  grid-template-columns: repeat(12, 12fr);
-  column-gap: 2em;
+  composes: pageLayoutMain from '../layouts.module.css';
 }
 
 .heading {
-  font-family: Heebo, sans-serif;
-  font-weight: 800;
-  font-size: 10em;
-  letter-spacing: -0.08em;
-  text-transform: uppercase;
-  overflow-x: visible;
-  white-space: nowrap;
-  margin: 0.75em 0 0 0;
-  line-height: 1;
+  composes: pageHeading from '../layouts.module.css';
 }

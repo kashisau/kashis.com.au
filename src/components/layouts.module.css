@@ -3,10 +3,32 @@
   padding: 0 5em;
   z-index: 1;
   display: grid;
-  column-gap: 16px;
-  max-width: 1460px;
+  column-gap: 1em;
+  max-width: 91.25em;
   margin: 0 auto 2em auto;
   grid-template-columns: repeat(12, 12fr);
   grid-template-rows: min-content auto;
   scroll-snap-align: start;
+}
+
+.pageHeading {
+  font-family: Heebo, sans-serif;
+  font-weight: 800;
+  font-size: 10em;
+  letter-spacing: -0.08em;
+  text-transform: uppercase;
+  overflow-x: visible;
+  white-space: nowrap;
+  margin: 0.75em 0 0 0;
+  line-height: 1;
+}
+
+.pageLayoutMain {
+  max-height: calc(100vh - 17.5em);
+  overflow: hidden;
+  
+  grid-column: 1 / 13;
+  display: grid;
+  grid-template-columns: repeat(12, 12fr);
+  column-gap: 2em;
 }
