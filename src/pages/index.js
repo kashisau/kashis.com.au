@@ -183,6 +183,7 @@ export const pageQuery = graphql`
                     }
                   }
                 }
+                liveUrl
               }
             }
           }

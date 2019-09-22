@@ -7,13 +7,13 @@
   max-width: 91.25em;
   margin: 0 auto 2em auto;
   grid-template-columns: repeat(12, 12fr);
-  grid-template-rows: min-content auto;
+  grid-template-rows: min-content calc(100vh - 19.5em);
   scroll-snap-align: start;
 }
 
 .pageHeading {
   font-family: Heebo, sans-serif;
-  font-weight: 800;
+  font-weight: 900;
   font-size: 10em;
   letter-spacing: -0.08em;
   text-transform: uppercase;
@@ -25,7 +25,6 @@
 
 .pageLayoutMain {
   max-height: calc(100vh - 17.5em);
-  overflow: hidden;
   
   grid-column: 1 / 13;
   display: grid;

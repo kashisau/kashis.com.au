@@ -1,0 +1,78 @@
+/* merriweather-sans-regular - latin */
+@font-face {
+  font-family: 'Merriweather Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: url('./merriweather-sans-v10-latin-regular.eot'); /* IE9 Compat Modes */
+  src: local('Merriweather Sans'), local('MerriweatherSans-Regular'),
+       url('./merriweather-sans-v10-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('./merriweather-sans-v10-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+       url('./merriweather-sans-v10-latin-regular.woff') format('woff'), /* Modern Browsers */
+       url('./merriweather-sans-v10-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('./merriweather-sans-v10-latin-regular.svg#MerriweatherSans') format('svg'); /* Legacy iOS */
+}
+/* merriweather-sans-800 - latin */
+@font-face {
+  font-family: 'Merriweather Sans';
+  font-style: normal;
+  font-weight: 800;
+  src: url('./merriweather-sans-v10-latin-800.eot'); /* IE9 Compat Modes */
+  src: local('Merriweather Sans ExtraBold'), local('MerriweatherSans-ExtraBold'),
+       url('./merriweather-sans-v10-latin-800.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('./merriweather-sans-v10-latin-800.woff2') format('woff2'), /* Super Modern Browsers */
+       url('./merriweather-sans-v10-latin-800.woff') format('woff'), /* Modern Browsers */
+       url('./merriweather-sans-v10-latin-800.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('./merriweather-sans-v10-latin-800.svg#MerriweatherSans') format('svg'); /* Legacy iOS */
+}
+/* martel-200 - latin_latin-ext */
+@font-face {
+  font-family: 'Martel';
+  font-style: normal;
+  font-weight: 200;
+  src: url('./martel-v3-latin_latin-ext-200.eot'); /* IE9 Compat Modes */
+  src: local('Martel UltraLight'), local('Martel-UltraLight'),
+       url('./martel-v3-latin_latin-ext-200.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('./martel-v3-latin_latin-ext-200.woff2') format('woff2'), /* Super Modern Browsers */
+       url('./martel-v3-latin_latin-ext-200.woff') format('woff'), /* Modern Browsers */
+       url('./martel-v3-latin_latin-ext-200.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('./martel-v3-latin_latin-ext-200.svg#Martel') format('svg'); /* Legacy iOS */
+}
+/* martel-700 - latin_latin-ext */
+@font-face {
+  font-family: 'Martel';
+  font-style: normal;
+  font-weight: 700;
+  src: url('./martel-v3-latin_latin-ext-700.eot'); /* IE9 Compat Modes */
+  src: local('Martel Bold'), local('Martel-Bold'),
+       url('./martel-v3-latin_latin-ext-700.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('./martel-v3-latin_latin-ext-700.woff2') format('woff2'), /* Super Modern Browsers */
+       url('./martel-v3-latin_latin-ext-700.woff') format('woff'), /* Modern Browsers */
+       url('./martel-v3-latin_latin-ext-700.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('./martel-v3-latin_latin-ext-700.svg#Martel') format('svg'); /* Legacy iOS */
+}
+/* heebo-700 - latin */
+@font-face {
+  font-family: 'Heebo';
+  font-style: normal;
+  font-weight: 700;
+  src: url('./heebo-v5-latin-700.eot'); /* IE9 Compat Modes */
+  src: local('Heebo Bold'), local('Heebo-Bold'),
+       url('./heebo-v5-latin-700.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('./heebo-v5-latin-700.woff2') format('woff2'), /* Super Modern Browsers */
+       url('./heebo-v5-latin-700.woff') format('woff'), /* Modern Browsers */
+       url('./heebo-v5-latin-700.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('./heebo-v5-latin-700.svg#Heebo') format('svg'); /* Legacy iOS */
+}
+/* heebo-900 - latin */
+@font-face {
+  font-family: 'Heebo';
+  font-style: normal;
+  font-weight: 900;
+  src: url('./heebo-v5-latin-900.eot'); /* IE9 Compat Modes */
+  src: local('Heebo Black'), local('Heebo-Black'),
+       url('./heebo-v5-latin-900.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('./heebo-v5-latin-900.woff2') format('woff2'), /* Super Modern Browsers */
+       url('./heebo-v5-latin-900.woff') format('woff'), /* Modern Browsers */
+       url('./heebo-v5-latin-900.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('./heebo-v5-latin-900.svg#Heebo') format('svg'); /* Legacy iOS */
+}

@@ -5,6 +5,7 @@ import Img from 'gatsby-image'
 
 import LayoutRight from '../components/LayoutRight'
 import styles from './pagestyles.module.css'
+import './features.scss'
 
 export const PreviousWorkPageTemplate = ({
   title,
@@ -16,17 +17,20 @@ export const PreviousWorkPageTemplate = ({
   works,
 }) => (
   <>
-    <h1>{title}</h1>
-    {subheading && <h2>{subheading}</h2>}
-    <main dangerouslySetInnerHTML={{__html: body}} />
-    {works.map(
-      (work, i) =>
-        <aside key={i}>
-          <h2>{work.title}</h2>
-          <Img fluid={work.image.childImageSharp.fluid} title={`Screenshot of ${work.title}`} />
-          <p dangerouslySetInnerHTML={{__html: work.blurb}} />
-        </aside>
-    )}
+    <div className={[styles.bodyRight, styles.lightText].join(' ')} dangerouslySetInnerHTML={{__html: body}} />
+    <section className={[styles.leftFeature, styles.leftFeature4x4].join(' ')}>
+      {works.map(
+        (work, i) =>
+          <aside className={[styles[`leftFeature4x4Feature${i}`]].join(' ')} key={i}>
+            <Img fluid={work.image.childImageSharp.fluid} title={`Screenshot of ${work.title}`} />
+            <div className={['hiddenFeatures'].join(' ')}>
+              <h2 className={[styles.featureHeading ,styles.featureHiddenUntilHover].join(' ')}>{work.title}</h2>
+              <p className={[styles.featureBlurb ,styles.featureHiddenUntilHover].join(' ')} dangerouslySetInnerHTML={{__html: work.blurb}} />
+              {work.liveUrl && <a className={[styles.buttonLink, styles.buttonLinkLight, styles.featureUrl, styles.featureHiddenUntilHover].join(' ')} href={work.liveUrl} title={`See '${work.title} online'`}>{work.title}</a>}
+            </div>
+          </aside>
+      )}
+    </section>
   </>
 )
 
@@ -54,6 +58,7 @@ PreviousWorkPageTemplate.propTypes = {
     title: PropTypes.string,
     blurb: PropTypes.string,
     image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+    liveUrl: PropTypes.string
   }))
 }
 
@@ -130,6 +135,7 @@ export const pageQuery = graphql`
               }
             }
           }
+          liveUrl
         }
       }
     }

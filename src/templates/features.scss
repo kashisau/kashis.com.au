@@ -1,0 +1,68 @@
+.hiddenFeatures {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  overflow: hidden;
+}
+.hiddenFeatures::before {
+  position: absolute;
+  display: block;
+  content: " ";
+  z-index: 1;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  background-color: rgba(23,21,23,0.75);
+}
+.hiddenFeatures > h2,
+.hiddenFeatures > p,
+.hiddenFeatures > a,
+.hiddenFeatures::before {
+  opacity: 0;
+  transition: transform 400ms ease-in-out, 
+    opacity 400ms ease-in-out;
+  }
+  
+  .hiddenFeatures > h2 {
+    transform: translateY(-100%);
+  }
+  .hiddenFeatures > p {
+    transform: translateY(100%);
+  }
+  .hiddenFeatures > a {
+    transform: translateX(-100%);
+    transition: transform 400ms ease-in-out, 
+      opacity 400ms ease-in-out,
+      border 100ms ease-in-out,
+      background-color 100ms ease-in-out,
+      color 100ms ease-in-out;
+}
+
+.hiddenFeatures:hover {
+  > h2,
+  > p,
+  > a,
+  &::before {
+    opacity: 1;
+  }
+}
+
+.hiddenFeatures:hover > h2 {
+  transform: translateX(0);
+}
+.hiddenFeatures:hover > p {
+  transform: translateY(0);
+  transition: transform 400ms ease-in-out 100ms, 
+    opacity 400ms ease-in-out 100ms;
+}
+.hiddenFeatures:hover > a {
+  transform: translateX(0);
+  transition: transform 400ms ease-in-out 200ms, 
+    opacity 400ms ease-in-out 200ms,
+    border 100ms ease-in-out,
+    background-color 100ms ease-in-out,
+    color 100ms ease-in-out;
+}

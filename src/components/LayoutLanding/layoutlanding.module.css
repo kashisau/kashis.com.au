@@ -5,6 +5,7 @@
 .heroText {
   grid-column: 1 / 11;
   font-family: Heebo, sans-serif;
+  font-weight: 700;
   font-size: 2.5em;
   color: white;
   margin-top: 5em;

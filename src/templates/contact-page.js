@@ -20,7 +20,7 @@ export const ContactPageTemplate = ({
         {section.links.map(
           (link, i) => <section key={i}>
               <p dangerouslySetInnerHTML={{ __html: link.blurb }} />
-              <a href={link.url} title={link.title}>{link.btnText}</a>
+              <a className={[styles.buttonLink, i % 2? styles.buttonLinkSecondaryDark : styles.buttonLinkDark].join(' ')} href={link.url} title={link.title}>{link.btnText}</a>
             </section>
         )}
       </section>

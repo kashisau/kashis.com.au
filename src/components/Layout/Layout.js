@@ -4,6 +4,7 @@ import useSiteMetadata from '../SiteMetadata'
 import { withPrefix } from "gatsby"
 
 import '../all.sass'
+import '../../../static/fonts/fonts.css'
 import styles from './layout.module.css'
 
 const TemplateWrapper = ({ children }) => {
@@ -44,6 +45,7 @@ const TemplateWrapper = ({ children }) => {
         <meta property="og:title" content={title} />
         <meta property="og:url" content="/" />
         <meta property="og:image" content={`${withPrefix("/")}img/og-image.jpg`} />
+
       </Helmet>
       <div className={styles.pageContainer}>
         {children}

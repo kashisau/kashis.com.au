@@ -50,11 +50,11 @@ collections:
           - {label: Title, name: title, widget: string}
           - {label: Description, name: description, widget: string}
           - {label: Image, name: image, widget: image}
-          - {label: "Body copy", name: body, widget: text}
+          - {label: "Body copy", name: body, widget: markdown}
           - {label: "Primary CTA", name: ctaPrimary, widget: object, fields: [{label: "Button text", name: btnText, widget: string}, {label: URL, name: url, widget: string}, {label: "Title", name: title, widget: string}]}
           - {label: "Secondary CTA", name: ctaSecondary, widget: object, fields: [{label: "Button text", name: btnText, widget: string}, {label: URL, name: url, widget: string}, {label: "Title", name: title, widget: string}]}
           - {label: "Tertiary CTA", name: ctaTertiary, widget: object, fields: [{label: "Button text", name: btnText, widget: string}, {label: URL, name: url, widget: string}, {label: "Title", name: title, widget: string}]}
-          - {label: "Featured works", name: works, widget: list, fields: [{label: "Title", name: "title", widget: "string"}, {label: "Blurb", name: "blurb", widget: "text"}, {label: "Featured Image", name: "image", widget: image}]}
+          - {label: "Featured works", name: works, widget: list, fields: [{label: "Title", name: "title", widget: "string"}, {label: "Blurb", name: "blurb", widget: "text"}, {label: "Featured Image", name: "image", widget: image}, {label: "Live URL", name: liveUrl, widget: string, required: false}]}
       - file: "src/pages/photography.md"
         label: "Photography"
         name: "photography"

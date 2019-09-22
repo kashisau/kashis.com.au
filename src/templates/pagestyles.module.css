@@ -14,16 +14,143 @@
 .body {
   grid-column: 1 / 4;
   grid-row: 1 / 2;
+  font-size: 1.25em;
+}
+
+.bodyRight {
+  grid-column: 9 / 13;
+  grid-row: 1 / 2;
+  font-size: 1.25em;
+}
+
+.lightText {
+  color: #ffffff;
+}
+
+.leftFeature {
+  grid-column: 1 / 9;
+  grid-row: 1 / 2;
+  margin-top: -4.5em;
+}
+
+.leftFeature4x4 {
+  display: grid;
+  grid-template-columns: repeat(8, 8fr);
+  grid-template-rows: min-content min-content;
+  column-gap: 1em;
+  row-gap: 1em;
+}
+
+.featureHeading {
+  color: white;
+  font-family: Heebo, sans-serif;
+  font-weight: 700;
+  font-size: 1.5em;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  padding: 1em 2em 0em 2em;
+  margin: 1em 0;
+}
+
+.featureBlurb {
+  color: white;
+  padding: 0 3em 0 3em;
+}
+
+.featureUrl {
+  padding: 0 2em;
+  margin: 1em 1em 1em 3em;
+  display: inline-block;
+}
+
+.featureHiddenUntilHover {
+  position: relative;
+  z-index: 2;
+}
+
+.feature4x4 {
+  box-shadow: 0 0 20px rgba(0,0,0,0.16);
+  position: relative;
+}
+
+.leftFeature4x4Feature0 {
+  composes: feature4x4;
+  grid-column: 1 / 5;
+  grid-row: 1 / 2;
+}
+.leftFeature4x4Feature1 {
+  composes: feature4x4;
+  grid-column: 5 / 9;
+  grid-row: 1 / 2;
+}
+.leftFeature4x4Feature2 {
+  composes: feature4x4;
+  grid-column: 1 / 5;
+  grid-row: 2 / 3;
+}
+.leftFeature4x4Feature3 {
+  composes: feature4x4;
+  grid-column: 5 / 9;
+  grid-row: 2 / 3;
 }
 
 .latestFeaturedImage {
   grid-column: 4 / 13;
   grid-row: 1 / 2;
-  margin-top: -4em;
+  margin-top: -5em;
   box-shadow: 0 0 40px rgba(0,0,0,0.16);
 }
 
 .contactSection {
   grid-column-start: span 3;
   grid-row: 1 / 2;
+}
+
+.buttonLink {
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1em;
+  min-width: 10em;
+  padding: 1em 3em 1em 1em;
+  border-radius: 0.25em;
+  box-shadow: 0px 1px 6px rgba(0,0,0,0.16);
+  white-space: nowrap;
+  transition: border 200ms ease-in-out,
+    background-color 200ms ease-in-out,
+    color 200ms ease-in-out;
+}
+
+.buttonLinkDark {
+  background-color: #557A9B;
+  border: 1px solid #557A9B;
+  color: white;
+}
+.buttonLinkLight {
+  background-color: #DDE6EB;
+  border: 1px solid #DDE6EB;
+  color: black;
+}
+.buttonLinkDark:hover {
+  background-color: #171517;
+  border: 1px solid #171517;
+  color: white;
+}
+.buttonLinkLight:hover {
+  background-color: transparent;
+  border: 1px solid #DDE6EB;
+  color: white;
+}
+.buttonLinkSecondaryLight {
+border: 1px solid #DDE6EB;
+color: white;
+}
+.buttonLinkSecondaryDark {
+  border: 1px solid #171517;
+  color: black;
+}
+
+.buttonLinkSecondaryDark:hover {
+  background-color: #171517;
+  border: 1px solid #171517;
+  color: white;
 }
