@@ -1,8 +1,6 @@
 .PageLayout {
   height: calc(100vh - 2em);
-  overflow: hidden;
   padding: 0 5em;
-  scroll-snap-align: start;
   z-index: 1;
   display: grid;
   column-gap: 16px;
@@ -10,4 +8,5 @@
   margin: 0 auto 2em auto;
   grid-template-columns: repeat(12, 12fr);
   grid-template-rows: min-content auto;
+  scroll-snap-align: start;
 }
