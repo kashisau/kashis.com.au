@@ -15,10 +15,10 @@ import FloatingNav from '../components/FloatingNav'
 export const CombinedPageTemplate = ({contactPageData, photographyPageData, previousWorkPageData, latestPageData, landingPageData}) =>
   <>
     <LandingPage page={landingPageData.page} data={{...landingPageData}} />
-    <LatestPage data={{...latestPageData}} />
-    <PreviousWorkPage data={{...previousWorkPageData}} />
-    <PhotographyPage data={{...photographyPageData}} />
-    <ContactPage data={{...contactPageData}} />
+    <LatestPage page={latestPageData.page} data={{...latestPageData}} />
+    <PreviousWorkPage page={previousWorkPageData.page} data={{...previousWorkPageData}} />
+    <PhotographyPage page={photographyPageData.page} data={{...photographyPageData}} />
+    <ContactPage page={contactPageData.page} data={{...contactPageData}} />
   </>
 
 const CombinedPage = ({ data }) => {
@@ -75,10 +75,10 @@ const CombinedPage = ({ data }) => {
     <Layout>
         <CombinedPageTemplate
           landingPageData={{page: pages.current[0], ...landingFrontmatter}}
-          latestPageData={latestFrontmatter}
-          previousWorkPageData={previousWorkFrontmatter}
-          photographyPageData={photographyFrontmatter}
-          contactPageData={contactFrontmatter}
+          latestPageData={{page: pages.current[1], ...latestFrontmatter}}
+          previousWorkPageData={{page: pages.current[2], ...previousWorkFrontmatter}}
+          photographyPageData={{page: pages.current[3], ...photographyFrontmatter}}
+          contactPageData={{page: pages.current[4], ...contactFrontmatter}}
         />
         <FloatingNav pages={pages.current} />
         <PageBackground pages={pages.current} />

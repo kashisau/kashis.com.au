@@ -36,10 +36,14 @@ LatestPageTemplate.propTypes = {
 
 const LatestPage = ({ data }) => {
   const { frontmatter } = data.markdownRemark
-  const { pageRef } = data
+  const { page, pageRef } = data
 
   return (
-    <LayoutLeft heading={frontmatter.title} headingStyle={styles.latestHeading} pageRef={pageRef}>
+    <LayoutLeft
+      heading={frontmatter.title}
+      headingStyle={styles.latestHeading}
+      page={page}
+      pageRef={pageRef}>
       <LatestPageTemplate
         image={frontmatter.image}
         subheading={frontmatter.subheading}

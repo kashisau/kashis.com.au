@@ -1,5 +1,5 @@
 .FloatingNav {
-  position: absolute;
+  position: fixed;
   top: 20px;
   left: 0;
   min-width: 560px;

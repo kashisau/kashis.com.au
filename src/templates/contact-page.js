@@ -53,10 +53,14 @@ ContactPageTemplate.propTypes = {
 
 const ContactPage = ({ data }) => {
   const { frontmatter } = data.markdownRemark
-  const { pageRef } = data
+  const { page, pageRef } = data
 
   return (
-    <LayoutRight heading={frontmatter.title} headingStyle={styles.contactHeading} pageRef={pageRef}>
+    <LayoutRight
+      heading={frontmatter.title}
+      headingStyle={styles.contactHeading}
+      page={page}
+      pageRef={pageRef}>
       <ContactPageTemplate
         description={frontmatter.description}
         email={frontmatter.email}

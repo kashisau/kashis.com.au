@@ -59,10 +59,14 @@ PreviousWorkPageTemplate.propTypes = {
 
 const PreviousWorkPage = ({ data }) => {
   const { frontmatter } = data.markdownRemark
-  const { pageRef } = data
+  const { page, pageRef } = data
 
   return (
-    <LayoutRight heading={frontmatter.title} headingStyle={styles.previousWorkHeading} pageRef={pageRef}>
+    <LayoutRight
+      heading={frontmatter.title}
+      headingStyle={styles.previousWorkHeading}
+      page={page}
+      pageRef={pageRef}>
       <PreviousWorkPageTemplate
         image={frontmatter.image}
         subheading={frontmatter.subheading}

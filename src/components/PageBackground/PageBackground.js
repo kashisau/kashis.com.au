@@ -6,8 +6,8 @@ import styles from './pagebackground.module.css'
 const PageBackground = ({ pages }) => 
   <div className={styles.pageBackgrounds}>
     {pages.map(
-      page =>
-        <div className={styles[page.name]} style={{opacity: page.intersectionRatio}}></div>
+      (page, i) =>
+        <div className={styles[page.name]} style={{opacity: page.intersectionRatio}} key={i}></div>
     )}
   </div>
 

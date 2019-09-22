@@ -56,10 +56,14 @@ PhotographyPageTemplate.propTypes = {
 
 const PhotographyPage = ({ data }) => {
   const { frontmatter } = data.markdownRemark
-  const { pageRef } = data
+  const { page, pageRef } = data
 
   return (
-    <LayoutLeft heading={frontmatter.title} headingStyle={styles.photographyHeading} pageRef={pageRef}>
+    <LayoutLeft
+      heading={frontmatter.title}
+      headingStyle={styles.photographyHeading}
+      page={page}
+      pageRef={pageRef}>
       <PhotographyPageTemplate
         image={frontmatter.image}
         description={frontmatter.description}
