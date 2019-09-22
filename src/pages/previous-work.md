@@ -4,22 +4,22 @@ title: Previous work
 description: Previous work that I have been involved with
 image: /img/home-jumbotron.jpg
 body: >
-  ## Bears
   As a full-stack developer within the Enterprise & Digital Services team in the Special Broadcasting Service, I rebuilt The Feed website using a combination of t3js and SASS, fetching data from an eventual consistency document caching system engineered by our team to decouple our legacy Drupal CMSs from their resentation layer using Symfony.
-  ## Chairs
+
+
   This project also allowed me to guide the implementation of a data layer in a bid to modernise our analytics approach across The Feed, SBS News and other SBS properties.
 ctaPrimary:
-  btnText: Click me
-  url: https://linkedin.com
-  title: Visit linkedin here
+  btnText: LinkedIn
+  url: https://au.linkedin.com/in/kashisau
+  title: Visit Kashi Samaraweera's LinkedIn profile
 ctaSecondary:
-  btnText: Click me
-  url: https://linkedin.com
-  title: Visit linkedin here
+  btnText: GitHub
+  url: https://github.com/kashisau
+  title: Kashisau on GitHub
 ctaTertiary:
-  btnText: Click me
-  url: https://linkedin.com
-  title: Visit linkedin here
+  btnText: Resume (PDF)
+  url: /files/resume.pdf
+  title: Download my resume in PDF format
 works:
   - visitKirtipur:
     title: Visit Kirtipur
@@ -28,7 +28,7 @@ works:
     liveUrl: https://visitkirtipur.com
   - abcIview:
     title: ABC iview
-    blurb: Front-end engineering the government-funded Australian Broadcasting Corporation's iview VOD service
+    blurb: Front-end engineer for the Australian Broadcasting Corporation's iview VOD service
     image: /img/work-abc-iview.jpg
     liveUrl: https://iview.abc.net.au
   - sbsTheFeed:

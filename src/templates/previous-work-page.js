@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import Img from 'gatsby-image'
+import marked from 'marked'
 
 import LayoutRight from '../components/LayoutRight'
 import styles from './pagestyles.module.css'
@@ -17,7 +18,13 @@ export const PreviousWorkPageTemplate = ({
   works,
 }) => (
   <>
-    <div className={[styles.bodyRight, styles.lightText].join(' ')} dangerouslySetInnerHTML={{__html: body}} />
+    <div className={[styles.bodyRight, styles.lightText].join(' ')}>
+      <div dangerouslySetInnerHTML={{__html: marked(body)}} />
+      {[ctaPrimary, ctaSecondary, ctaTertiary].map(
+        (cta, i) =>
+          <a className={[styles.buttonLink, i!==0? styles.buttonLinkSecondaryLight : styles.buttonLinkLight].join(' ')} href={cta.url} title={cta.title}>{cta.btnText}</a>
+      )}
+    </div>
     <section className={[styles.leftFeature, styles.leftFeature4x4].join(' ')}>
       {works.map(
         (work, i) =>
@@ -26,7 +33,8 @@ export const PreviousWorkPageTemplate = ({
             <div className={['hiddenFeatures'].join(' ')}>
               <h2 className={[styles.featureHeading ,styles.featureHiddenUntilHover].join(' ')}>{work.title}</h2>
               <p className={[styles.featureBlurb ,styles.featureHiddenUntilHover].join(' ')} dangerouslySetInnerHTML={{__html: work.blurb}} />
-              {work.liveUrl && <a className={[styles.buttonLink, styles.buttonLinkLight, styles.featureUrl, styles.featureHiddenUntilHover].join(' ')} href={work.liveUrl} title={`See '${work.title} online'`}>{work.title}</a>}
+              {work.liveUrl && <a className={[styles.buttonLink, styles.buttonLinkLight, styles.featureUrl, styles.featureHiddenUntilHover].join(' ')} href={work.liveUrl} title={`See '${work.title}' online`}>{work.title}</a>}
+              {!work.liveUrl && <span className={[styles.buttonLink, styles.buttonLinkSecondaryLight, styles.featureUrl, styles.featureHiddenUntilHover, styles.buttonLinkDisabled].join(' ')} title={`'${work.title}' is no longer available online`}>No longer available</span>}
             </div>
           </aside>
       )}

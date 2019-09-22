@@ -57,12 +57,6 @@
   padding: 0 3em 0 3em;
 }
 
-.featureUrl {
-  padding: 0 2em;
-  margin: 1em 1em 1em 3em;
-  display: inline-block;
-}
-
 .featureHiddenUntilHover {
   position: relative;
   z-index: 2;
@@ -108,7 +102,7 @@
 
 .buttonLink {
   text-decoration: none;
-  display: inline-block;
+  display: block;
   font-size: 1em;
   min-width: 10em;
   padding: 1em 3em 1em 1em;
@@ -118,6 +112,7 @@
   transition: border 200ms ease-in-out,
     background-color 200ms ease-in-out,
     color 200ms ease-in-out;
+  margin: 1em 0;
 }
 
 .buttonLinkDark {
@@ -130,15 +125,16 @@
   border: 1px solid #DDE6EB;
   color: black;
 }
-.buttonLinkDark:hover {
+.buttonLinkDark:not(.buttonLinkDisabled):hover {
   background-color: #171517;
   border: 1px solid #171517;
   color: white;
 }
-.buttonLinkLight:hover {
-  background-color: transparent;
-  border: 1px solid #DDE6EB;
+.buttonLinkLight:not(.buttonLinkDisabled):hover {
+  background-color: #171517;
+  border: 1px solid #171517;
   color: white;
+
 }
 .buttonLinkSecondaryLight {
 border: 1px solid #DDE6EB;
@@ -148,9 +144,19 @@ color: white;
   border: 1px solid #171517;
   color: black;
 }
-
-.buttonLinkSecondaryDark:hover {
+.buttonLinkSecondaryDark:not(.buttonLinkDisabled):hover {
   background-color: #171517;
   border: 1px solid #171517;
   color: white;
+}
+.buttonLinkSecondaryLight:not(.buttonLinkDisabled):hover {
+  background-color: #171517;
+  border: 1px solid #171517;
+  color: white;
+}
+
+.featureUrl {
+  padding: 1em 2em;
+  margin: 1em 1em 1em 3em;
+  display: inline-block;
 }
