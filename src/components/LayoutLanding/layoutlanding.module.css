@@ -1,6 +1,29 @@
 .LayoutLanding {
   composes: PageLayout from '../layouts.module.css';
-  min-height: 100vh;
+  min-height: calc(100vh - 4em);
+  background-image: url(/img/landing-hero.jpg);
+  background-size: cover;
+  position: relative;
+}
+
+.LayoutLanding::before {
+  content: " ";
+  display: block;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: rgba(21, 23, 23, 0.45);
+}
+
+@media (min-width: 768px) {
+  .LayoutLanding {
+    background-image: none;
+  }
+  .LayoutLanding::before {
+    display: none;
+  }
 }
 
 .heroText {
@@ -14,5 +37,12 @@
   font-weight: 600;
   text-shadow: 1px 1px 6px rgba(0,0,0,0.45);
   line-height: 1.375;
-  position: fixed;
+  position: relative;
+}
+
+@media (min-width: 768px) {
+  .heroText {
+    position: fixed;
+  }
+  
 }

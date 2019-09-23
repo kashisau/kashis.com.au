@@ -15,7 +15,7 @@ const FloatingNav = ({ pages }) => {
   if (newCurrentPage && newCurrentPage.name !== currentPage) {
     updateCurrentPage(newCurrentPage.name)
     updateOldCurrentPage(currentPage)
-    console.log(`to${newCurrentPage.name} from${oldCurrentPage}`)
+    // console.log(`to${newCurrentPage.name} from${oldCurrentPage}`)
   }
 
   const transitionLanding = pages[0].intersectionRatio === 1
@@ -23,7 +23,7 @@ const FloatingNav = ({ pages }) => {
 
   return (
     <nav className={styles.FloatingNav} style={{ transform: `scale(${navScale})`}}>
-      <a className={styles.logoLockup} href="javascript:void(0)" title="Scroll to top">
+      <a className={styles.logoLockup} href="#" title="Scroll to top">
         <img className={styles.logo} src={Logo} title="Kashis.com.au's Logo" /><h1 className={styles.logoType}>Kashi Samaraweera</h1>
       </a>
       <div className={styles.background}>

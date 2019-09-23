@@ -1,8 +1,8 @@
 import React from 'react'
 import styles from './layoutright.module.css'
 
-const LayoutRight = ({ page, layoutStyle, heading, headingStyle, pageRef, children }) =>
-  <section className={styles.LayoutRight} ref={pageRef}>
+const LayoutRight = ({ page, layoutStyle, heading, headingStyle, backgroundStyle, pageRef, children }) =>
+  <section className={[styles.LayoutRight, backgroundStyle].join(' ')} ref={pageRef}>
     <header className={styles.header} style={{ opacity: page.intersectionRatio }}>
       <h1 className={[styles.heading, headingStyle].join(' ')}>{heading}</h1>
     </header>

@@ -2,12 +2,18 @@
   padding: 0;
   margin: 0;
   position: fixed;
-  display: block;
+  display: none;
   left: 0;
   top: 0;
   right: 0;
   bottom: 0;
   z-index: -1;
+}
+
+@media (min-width: 768px) {
+  .pageBackgrounds {
+    display: block;
+  }
 }
 
 .pageBackground {
@@ -39,22 +45,33 @@
   background-color: rgba(21, 23, 23, 0.45);
 }
 
-.latest {
-  composes: pageBackground;
+.latestBackgroundColor {
   background-color: rgba(255, 255, 255, 1);
 }
 
-.previousWork {
-  composes: pageBackground;
+.latest {
+  composes: pageBackground latestBackgroundColor;
+}
+
+.previousWorkBackgroundColor {
   background-color: rgba(85, 122, 155, 1);
 }
 
-.photography {
-  composes: pageBackground;
+.previousWork {
+  composes: pageBackground previousWorkBackgroundColor;
+}
+
+.photographyBackgroundColor {
   background-color: rgba(23, 21, 23, 1);
 }
 
-.contact {
-  composes: pageBackground;
+.photography {
+  composes: pageBackground photographyBackgroundColor;
+}
+
+.contactBackgroundColor {
   background-color: rgba(221, 230, 235, 1);
+}
+.contact {
+  composes: pageBackground contactBackgroundColor;
 }

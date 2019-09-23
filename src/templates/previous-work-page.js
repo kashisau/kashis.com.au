@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import Img from 'gatsby-image'
@@ -22,7 +22,7 @@ export const PreviousWorkPageTemplate = ({
       <div dangerouslySetInnerHTML={{__html: marked(body)}} />
       {[ctaPrimary, ctaSecondary, ctaTertiary].map(
         (cta, i) =>
-          <a className={[styles.buttonLink, i!==0? styles.buttonLinkSecondaryLight : styles.buttonLinkLight].join(' ')} href={cta.url} title={cta.title}>{cta.btnText}</a>
+          <a className={[styles.buttonLink, i!==0? styles.buttonLinkSecondaryLight : styles.buttonLinkLight].join(' ')} href={cta.url} title={cta.title} key={i}>{cta.btnText}</a>
       )}
     </div>
     <section className={[styles.leftFeature, styles.leftFeature4x4].join(' ')}>
@@ -72,12 +72,16 @@ PreviousWorkPageTemplate.propTypes = {
 
 const PreviousWorkPage = ({ data }) => {
   const { frontmatter } = data.markdownRemark
-  const { page, pageRef } = data
+  const {
+    page = {name: 'previousWork', intersectionRatio: 0},
+    pageRef
+  } = data
 
   return (
     <LayoutRight
       heading={frontmatter.title}
       headingStyle={styles.previousWorkHeading}
+      backgroundStyle={styles.previousWorkBackgroundColor}
       page={page}
       pageRef={pageRef}>
       <PreviousWorkPageTemplate

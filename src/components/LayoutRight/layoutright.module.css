@@ -10,6 +10,12 @@
   overflow: hidden;
   margin-right: -2em;
 }
+@media (min-width: 768px) {
+  .header {
+    overflow: visible;
+  }
+}
+
 
 .main {
   composes: pageLayoutMain from '../layouts.module.css';

@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState } from 'react'
+import React, { useRef, useEffect, useLayoutEffect, useState } from 'react'
 import { graphql } from 'gatsby'
 
 import Layout from '../components/Layout'
@@ -14,7 +14,7 @@ import FloatingNav from '../components/FloatingNav'
 
 export const CombinedPageTemplate = ({contactPageData, photographyPageData, previousWorkPageData, latestPageData, landingPageData}) =>
   <>
-    <LandingPage page={landingPageData.page} data={{...landingPageData}} />
+    <LandingPage isMobile={landingPageData.isMobile} page={landingPageData.page} data={{...landingPageData}} />
     <LatestPage page={latestPageData.page} data={{...latestPageData}} />
     <PreviousWorkPage page={previousWorkPageData.page} data={{...previousWorkPageData}} />
     <PhotographyPage page={photographyPageData.page} data={{...photographyPageData}} />
@@ -26,15 +26,16 @@ const CombinedPage = ({ data }) => {
 
   const pages = useRef(
     [
-      {name: 'landing', intersectionRatio: 1, ref: useRef(), backgroundRef: useRef()},
-      {name: 'latest', intersectionRatio: 0, ref: useRef(), backgroundRef: useRef()},
-      {name: 'previousWork', intersectionRatio: 0, ref: useRef(), backgroundRef: useRef()},
-      {name: 'photography', intersectionRatio: 0, ref: useRef(), backgroundRef: useRef()},
-      {name: 'contact', intersectionRatio: 0, ref: useRef(), backgroundRef: useRef()},
+      {name: 'landing', intersectionRatio: 1, ref: useRef()},
+      {name: 'latest', intersectionRatio: 0, ref: useRef()},
+      {name: 'previousWork', intersectionRatio: 0, ref: useRef()},
+      {name: 'photography', intersectionRatio: 0, ref: useRef()},
+      {name: 'contact', intersectionRatio: 0, ref: useRef()},
     ]
   )
 
   const [pagesIntersection, updatePagesIntersection] = useState([{}])
+  const [isMobile, updateIsMobile] = useState((typeof(window) === 'undefined')? false : window.innerWidth < 768);
 
   const landingFrontmatter = { markdownRemark: frontmatter.landingMarkdownFile.childMarkdownRemark, pageRef: pages.current[0].ref }
   const latestFrontmatter = { markdownRemark: frontmatter.latestMarkdownFile.childMarkdownRemark, pageRef: pages.current[1].ref }
@@ -43,6 +44,19 @@ const CombinedPage = ({ data }) => {
   const contactFrontmatter = { markdownRemark: frontmatter.contactMarkdownFile.childMarkdownRemark, pageRef: pages.current[4].ref }
 
   const observer = useRef();
+
+  useEffect(
+    () => {
+      window.addEventListener(
+        'resize',
+        (resizeEvent) => {
+          updateIsMobile(window.innerWidth < 768)
+        }
+      )
+      updateIsMobile(window.innerWidth < 768)
+    },
+    []
+  )
 
   useEffect(
     () => {
@@ -71,10 +85,15 @@ const CombinedPage = ({ data }) => {
     }
   )
 
+  console.log("Pages: ", pages.current.reduce(
+    (pageString, page) => pageString + `${page.name}: ${Math.round(page.intersectionRatio*100)/100}`
+    , "")
+  )
+
   return (
     <Layout>
         <CombinedPageTemplate
-          landingPageData={{page: pages.current[0], ...landingFrontmatter}}
+          landingPageData={{page: pages.current[0], isMobile: isMobile, ...landingFrontmatter}}
           latestPageData={{page: pages.current[1], ...latestFrontmatter}}
           previousWorkPageData={{page: pages.current[2], ...previousWorkFrontmatter}}
           photographyPageData={{page: pages.current[3], ...photographyFrontmatter}}

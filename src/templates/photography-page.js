@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import Img from 'gatsby-image'
@@ -56,12 +56,16 @@ PhotographyPageTemplate.propTypes = {
 
 const PhotographyPage = ({ data }) => {
   const { frontmatter } = data.markdownRemark
-  const { page, pageRef } = data
+  const { 
+    page = {name: 'photography', intersectionRatio: 0},
+    pageRef
+  } = data
 
   return (
     <LayoutLeft
       heading={frontmatter.title}
       headingStyle={styles.photographyHeading}
+      backgroundStyle={styles.photographyBackgroundColor}
       page={page}
       pageRef={pageRef}>
       <PhotographyPageTemplate

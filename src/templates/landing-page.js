@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import PropTypes from 'prop-types'
 import { Link, graphql } from 'gatsby'
 
@@ -34,13 +34,15 @@ LandingPageTemplate.propTypes = {
   }),
 }
 
-const LandingPage = ({ data, page }) => {
+const LandingPage = ({ data, isMobile, page = {name: 'landing', intersectionRatio: 0} }) => {
   const { frontmatter } = data.markdownRemark
-  const { pageRef } = data
+  const { 
+    pageRef
+  } = data
   const { intersectionRatio } = page
 
   return (
-    <LayoutLanding pageRef={pageRef} heroText={frontmatter.heroText} intersectionRatio={intersectionRatio} backgroundClass="PageBackground--landing">
+    <LayoutLanding pageRef={pageRef} isMobile={isMobile} heroText={frontmatter.heroText} intersectionRatio={intersectionRatio} backgroundClass="PageBackground--landing">
       <LandingPageTemplate
         intersectionRatio={intersectionRatio}
         image={frontmatter.image}

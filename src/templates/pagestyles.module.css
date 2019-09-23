@@ -5,10 +5,40 @@
   color: #DDE6EB;
 }
 .photographyHeading {
-  color: #636363;
+  color: #DDE6EB;
+}
+@media (min-width: 768px) {
+  .photographyHeading {
+    color: #636363;
+  }
 }
 .contactHeading {
   color: #171517;
+}
+
+.latestBackgroundColor {
+  background-color: rgba(255, 255, 255, 1);
+}
+
+.previousWorkBackgroundColor {
+  background-color: rgba(85, 122, 155, 1);
+}
+
+.photographyBackgroundColor {
+  background-color: rgba(23, 21, 23, 1);
+}
+
+.contactBackgroundColor {
+  background-color: rgba(221, 230, 235, 1);
+}
+
+@media (min-width: 768px) {
+  .latestBackgroundColor,
+  .previousWorkBackgroundColor,
+  .photographyBackgroundColor,
+  .contactBackgroundColor {
+    background-color: transparent;
+  }
 }
 
 .layout4 {
