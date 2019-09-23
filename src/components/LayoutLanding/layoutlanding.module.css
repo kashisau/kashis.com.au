@@ -37,13 +37,12 @@
   font-weight: 600;
   text-shadow: 1px 1px 6px rgba(0,0,0,0.45);
   line-height: 1.375;
-  position: relative;
+  position: fixed;
 }
 
-@media (min-width: 768px) {
+/* @media (min-width: 768px) {
   .heroText {
     position: fixed;
-    margin-top: 5em;
   }
   
-}
+} */

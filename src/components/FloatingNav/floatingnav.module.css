@@ -13,6 +13,8 @@
   display: grid;
   justify-items: center;
   transform-origin: center top;
+
+  transform: translateY(5em);
 }
 
 @media (min-width: 768px) {
@@ -85,9 +87,16 @@
   left: 0;
   right: 0;
   bottom: 0;
-  opacity: 1;
+  opacity: 0;
   transition: opacity 400ms linear;
   box-shadow: 0 0 20px rgba(0,0,0,0.32);
+  background-color: #232325;
+}
+
+@media (min-width: 768px) {
+  .navShadow {
+    background-color: transparent;
+  }
 }
 
 .navBackground {
@@ -100,12 +109,18 @@
   bottom: 0;
   opacity: 0;
   transition: opacity 400ms linear;
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .navBackground {
+    display: block;
+  }
 }
 
 .landing {
   composes: navBackground;
   background-color: transparent;
-  box-shadow: 0 0 20px rgba(0,0,0,0.0);
 }
 
 .latest {
