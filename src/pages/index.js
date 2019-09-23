@@ -85,13 +85,14 @@ const CombinedPage = ({ data }) => {
     }
   )
 
-  console.log("Pages: ", pages.current.reduce(
-    (pageString, page) => pageString + `${page.name}: ${Math.round(page.intersectionRatio*100)/100}`
-    , "")
-  )
+  // console.log("Pages: ", pages.current.reduce(
+  //   (pageString, page) => pageString + `${page.name}: ${Math.round(page.intersectionRatio*100)/100}`
+  //   , "")
+  // )
 
   return (
     <Layout>
+        <FloatingNav pages={pages.current} />
         <CombinedPageTemplate
           landingPageData={{page: pages.current[0], isMobile: isMobile, ...landingFrontmatter}}
           latestPageData={{page: pages.current[1], ...latestFrontmatter}}
@@ -99,7 +100,6 @@ const CombinedPage = ({ data }) => {
           photographyPageData={{page: pages.current[3], ...photographyFrontmatter}}
           contactPageData={{page: pages.current[4], ...contactFrontmatter}}
         />
-        <FloatingNav pages={pages.current} />
         <PageBackground pages={pages.current} />
     </Layout>
   )

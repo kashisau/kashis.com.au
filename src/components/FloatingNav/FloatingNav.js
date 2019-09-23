@@ -9,6 +9,8 @@ const FloatingNav = ({ pages }) => {
     page => page.intersectionRatio === 1
   )
 
+  const latestActive = pages[0].intersectionRatio > 0.05
+
   const [currentPage, updateCurrentPage] = useState('landing')
   const [oldCurrentPage, updateOldCurrentPage] = useState('landing')
 
@@ -22,11 +24,12 @@ const FloatingNav = ({ pages }) => {
     || pages[0].intersectionRatio > 0 && pages[1].intersectionRatio < 1 && pages[1].intersectionRatio >= 0
 
   return (
-    <nav className={styles.FloatingNav} style={{ transform: `scale(${navScale})`}}>
+    <nav className={styles.FloatingNav} style={{ transform: `scale(${navScale}) translateY(${landingIntersectionRatio*5}em)`}}>
       <a className={styles.logoLockup} href="#" title="Scroll to top">
-        <img className={styles.logo} src={Logo} title="Kashis.com.au's Logo" /><h1 className={styles.logoType}>Kashi Samaraweera</h1>
+        <img className={styles.logo} src={Logo} title="Kashis.com.au's Logo" />
+        <h1 className={styles.logoType}>Kashi Samaraweera</h1>
       </a>
-      <div className={styles.background}>
+      <div className={styles.background} style={{opacity: latestActive? 0 : 1}}>
         {pages.map(
           (page, i) => {
             const opacity = (currentPage === 'landing' || (transitionLanding && currentPage === 'latest') )? page.intersectionRatio
@@ -37,6 +40,7 @@ const FloatingNav = ({ pages }) => {
             
           }
         )}
+        <div className={styles.navShadow} style={{opacity: latestActive? 0 : 1}}></div>
       </div>
     </nav>
   )
