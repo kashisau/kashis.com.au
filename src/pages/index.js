@@ -14,7 +14,7 @@ import FloatingNav from '../components/FloatingNav'
 
 export const CombinedPageTemplate = ({contactPageData, photographyPageData, previousWorkPageData, latestPageData, landingPageData}) =>
   <>
-    <LandingPage isMobile={landingPageData.isMobile} page={landingPageData.page} data={{...landingPageData}} />
+    <LandingPage isMobile={landingPageData.isMobile} landingRatio={landingPageData.landingRatio} page={landingPageData.page} data={{...landingPageData}} />
     <LatestPage page={latestPageData.page} data={{...latestPageData}} />
     <PreviousWorkPage page={previousWorkPageData.page} data={{...previousWorkPageData}} />
     <PhotographyPage page={photographyPageData.page} data={{...photographyPageData}} />
@@ -34,16 +34,22 @@ const CombinedPage = ({ data }) => {
     ]
   )
 
-  const [pagesIntersection, updatePagesIntersection] = useState([{}])
   const [isMobile, updateIsMobile] = useState((typeof(window) === 'undefined')? false : window.innerWidth < 768);
+  const [pagesIntersection, updatePagesIntersection] = useState([])
+  const [pageScroll, updatePageScroll] = useState(0)
+  const [pageHeight, updatePageHeight] = useState(0)
 
+  
+  const observer = useRef()
+  const pageContainerRef = useRef()
+  const scrollWatcher = useRef(scrollEvent => updatePageScroll((scrollEvent.currentTarget === document? scrollEvent.target.scrollingElement : scrollEvent.target).scrollTop))
+  
+  // Data extracted from GraphQL
   const landingFrontmatter = { markdownRemark: frontmatter.landingMarkdownFile.childMarkdownRemark, pageRef: pages.current[0].ref }
   const latestFrontmatter = { markdownRemark: frontmatter.latestMarkdownFile.childMarkdownRemark, pageRef: pages.current[1].ref }
   const previousWorkFrontmatter = { markdownRemark: frontmatter.previousWorkMarkdownFile.childMarkdownRemark, pageRef: pages.current[2].ref }
   const photographyFrontmatter = { markdownRemark: frontmatter.photographyMarkdownFile.childMarkdownRemark, pageRef: pages.current[3].ref }
   const contactFrontmatter = { markdownRemark: frontmatter.contactMarkdownFile.childMarkdownRemark, pageRef: pages.current[4].ref }
-
-  const observer = useRef();
 
   useEffect(
     () => {
@@ -51,11 +57,26 @@ const CombinedPage = ({ data }) => {
         'resize',
         (resizeEvent) => {
           updateIsMobile(window.innerWidth < 768)
+          updatePageHeight(window.innerHeight)
         }
       )
       updateIsMobile(window.innerWidth < 768)
+      updatePageHeight(window.innerHeight)
     },
     []
+  )
+
+  useEffect(
+    () => {
+        // Elements to watch for scroll [mobile, desktop]
+      const scrollingElements = [document, pageContainerRef.current]
+      const scrollingElement = scrollingElements[isMobile? 0 : 1]
+      // Remove current listeners
+      scrollingElements.forEach(el => el && el.removeEventListener('scroll', scrollWatcher.current))
+      // Add new listener
+      scrollingElement && scrollingElement.addEventListener('scroll', scrollWatcher.current)
+    },
+    [isMobile, pages]
   )
 
   useEffect(
@@ -78,23 +99,34 @@ const CombinedPage = ({ data }) => {
     [pages]
   )
 
-  pagesIntersection.forEach(
-    pageIntersectionEvent => {
-      const page = pages.current.find(({ ref : { current }}) => current === pageIntersectionEvent.target)
-      page.intersectionRatio = pageIntersectionEvent.intersectionRatio
-    }
+  useEffect(
+    () =>
+    pagesIntersection.forEach(
+      pageIntersectionEvent => {
+        const page = pages.current.find(({ ref : { current }}) => current === pageIntersectionEvent.target)
+        // console.log('irevent', pageIntersectionEvent)
+
+        // if (typeof(page) === 'undefined') {
+        //   return;
+        // }
+        page.intersectionRatio = pageIntersectionEvent.intersectionRatio
+      }
+    ),
+    [pagesIntersection]
   )
 
-  // console.log("Pages: ", pages.current.reduce(
-  //   (pageString, page) => pageString + `${page.name}: ${Math.round(page.intersectionRatio*100)/100}`
-  //   , "")
-  // )
+  
+  const landingRatio = Math.max(1 - pageScroll / pageHeight, 0)
 
   return (
-    <Layout>
-        <FloatingNav pages={pages.current} />
+    <Layout pageContainerRef={pageContainerRef}>
+        <FloatingNav
+          pages={pages.current}
+          pageContainerRef={pageContainerRef}
+          landingRatio={landingRatio}
+          isMobile={isMobile} />
         <CombinedPageTemplate
-          landingPageData={{page: pages.current[0], isMobile: isMobile, ...landingFrontmatter}}
+          landingPageData={{page: pages.current[0], landingRatio: landingRatio, isMobile: isMobile, ...landingFrontmatter}}
           latestPageData={{page: pages.current[1], ...latestFrontmatter}}
           previousWorkPageData={{page: pages.current[2], ...previousWorkFrontmatter}}
           photographyPageData={{page: pages.current[3], ...photographyFrontmatter}}

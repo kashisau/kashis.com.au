@@ -1,6 +1,7 @@
 .LayoutLanding {
   composes: PageLayout from '../layouts.module.css';
   min-height: calc(100vh - 4em);
+  height: 100vh;
   background-image: url(/img/landing-hero.jpg);
   background-size: cover;
   position: relative;
@@ -37,12 +38,12 @@
   font-weight: 600;
   text-shadow: 1px 1px 6px rgba(0,0,0,0.45);
   line-height: 1.375;
-  position: fixed;
+  position: relative;
 }
 
-/* @media (min-width: 768px) {
+@media (min-width: 768px) {
   .heroText {
     position: fixed;
   }
   
-} */
+}

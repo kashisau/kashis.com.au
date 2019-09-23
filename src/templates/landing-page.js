@@ -34,17 +34,21 @@ LandingPageTemplate.propTypes = {
   }),
 }
 
-const LandingPage = ({ data, isMobile, page = {name: 'landing', intersectionRatio: 0} }) => {
+const LandingPage = ({ data, isMobile, landingRatio}) => {
   const { frontmatter } = data.markdownRemark
   const { 
     pageRef
   } = data
-  const { intersectionRatio } = page
 
   return (
-    <LayoutLanding pageRef={pageRef} isMobile={isMobile} heroText={frontmatter.heroText} intersectionRatio={intersectionRatio} backgroundClass="PageBackground--landing">
+    <LayoutLanding
+      backgroundClass="PageBackground--landing"
+      heroText={frontmatter.heroText}
+      landingRatio={landingRatio}
+      isMobile={isMobile}
+      pageRef={pageRef}
+      >
       <LandingPageTemplate
-        intersectionRatio={intersectionRatio}
         image={frontmatter.image}
         title={frontmatter.title}
         heroText={frontmatter.heroText}

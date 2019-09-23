@@ -1,10 +1,9 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import styles from './floatingnav.module.css'
 import Logo from '../../img/kashis-logo.png'
 
-const FloatingNav = ({ pages }) => {
+const FloatingNav = ({ pages, isMobile, pageContainerRef, landingRatio = 1 }) => {
   const landingIntersectionRatio = pages[0].intersectionRatio
-  const navScale = 0.5 + (landingIntersectionRatio) * 0.5
   const newCurrentPage = pages.find(
     page => page.intersectionRatio === 1
   )
@@ -20,16 +19,17 @@ const FloatingNav = ({ pages }) => {
     updateOldCurrentPage(currentPage)
   }
 
+  const navScale = 0.5 + (landingRatio) * 0.5
   const transitionLanding = pages[0].intersectionRatio === 1
     || pages[0].intersectionRatio > 0 && pages[1].intersectionRatio < 1 && pages[1].intersectionRatio >= 0
 
   return (
-    <nav className={styles.FloatingNav} style={{ transform: `scale(${navScale}) translateY(${landingIntersectionRatio*5}em)`}}>
+    <nav className={styles.FloatingNav} style={{ transform: `scale(${navScale}) translateY(${landingRatio*5}em)`}}>
       <a className={styles.logoLockup} href="#" title="Scroll to top">
         <img className={styles.logo} src={Logo} title="Kashis.com.au's Logo" />
         <h1 className={styles.logoType}>Kashi Samaraweera</h1>
       </a>
-      <div className={styles.background} style={{opacity: landingActive? 0 : 1}}>
+      <div className={styles.background}>
         {pages.map(
           (page, i) => {
             const opacity = (currentPage === 'landing' || (transitionLanding && currentPage === 'latest') )? page.intersectionRatio
@@ -40,7 +40,7 @@ const FloatingNav = ({ pages }) => {
             
           }
         )}
-        <div className={styles.navShadow} style={{opacity: landingActive? 0 : 1}}></div>
+        <div className={styles.navShadow} style={{opacity: 1 - landingRatio}}></div>
       </div>
     </nav>
   )

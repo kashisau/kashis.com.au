@@ -7,7 +7,7 @@ import '../all.sass'
 import '../../../static/fonts/fonts.css'
 import styles from './layout.module.css'
 
-const TemplateWrapper = ({ children }) => {
+const TemplateWrapper = ({ pageContainerRef, children }) => {
   const { title, description } = useSiteMetadata()
   return (
     <div>
@@ -47,7 +47,7 @@ const TemplateWrapper = ({ children }) => {
         <meta property="og:image" content={`${withPrefix("/")}img/og-image.jpg`} />
 
       </Helmet>
-      <div className={styles.pageContainer}>
+      <div className={styles.pageContainer} ref={pageContainerRef}>
         {children}
       </div>
     </div>
