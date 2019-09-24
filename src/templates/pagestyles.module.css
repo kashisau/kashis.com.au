@@ -32,14 +32,14 @@
   background-color: rgba(221, 230, 235, 1);
 }
 
-@media (min-width: 768px) {
+/* @media (min-width: 768px) { */
   .latestBackgroundColor,
   .previousWorkBackgroundColor,
   .photographyBackgroundColor,
   .contactBackgroundColor {
     background-color: transparent;
   }
-}
+/* } */
 
 .layout4 {
   

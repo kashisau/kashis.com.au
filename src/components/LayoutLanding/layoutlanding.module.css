@@ -18,14 +18,14 @@
   background-color: rgba(21, 23, 23, 0.45);
 }
 
-@media (min-width: 768px) {
+/* @media (min-width: 768px) { */
   .LayoutLanding {
     background-image: none;
   }
   .LayoutLanding::before {
     display: none;
   }
-}
+/* } */
 
 .heroText {
   grid-column: 1 / 11;

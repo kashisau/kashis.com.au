@@ -37,7 +37,7 @@ const CombinedPage = ({ data }) => {
   const [isMobile, updateIsMobile] = useState((typeof(window) === 'undefined')? false : window.innerWidth < 768);
   const [pagesIntersection, updatePagesIntersection] = useState([])
   const [pageScroll, updatePageScroll] = useState(0)
-  const [pageHeight, updatePageHeight] = useState(0)
+  const [pageHeight, updatePageHeight] = useState(1)
 
   
   const observer = useRef()
@@ -85,7 +85,7 @@ const CombinedPage = ({ data }) => {
       observer.current = new window.IntersectionObserver(
         (entries) => updatePagesIntersection(entries),
         {
-          threshold: [...Array(101).keys()].map((p, q) => q/100)
+          threshold: [...Array(1001).keys()].map((p, q) => q/1000)
         }
       )
       const currentObserver = observer.current
@@ -104,35 +104,56 @@ const CombinedPage = ({ data }) => {
     pagesIntersection.forEach(
       pageIntersectionEvent => {
         const page = pages.current.find(({ ref : { current }}) => current === pageIntersectionEvent.target)
-        // console.log('irevent', pageIntersectionEvent)
-
-        // if (typeof(page) === 'undefined') {
-        //   return;
-        // }
         page.intersectionRatio = pageIntersectionEvent.intersectionRatio
       }
     ),
     [pagesIntersection]
   )
 
-  
+  const activePage = pages.current.reduce(
+    (activePage, page) => 
+      (page.intersectionRatio > 0
+      && page.intersectionRatio > activePage.intersectionRatio)? page : activePage
+  )
+
+  const activePageScaler = 1 / activePage.intersectionRatio
+  const scaledPages = pages.current.map(
+    page => ({...page, intersectionRatio: page.intersectionRatio * activePageScaler})
+  )
+
+  // const pageIRs = scaledPages.reduce(
+  //   (matchingPages, page) => {
+  //     const matchingOtherPage = scaledPages.find(
+  //       (searchPage) => 
+  //         page.intersectionRatio > 0
+  //         && searchPage !== page
+  //         && searchPage.intersectionRatio === page.intersectionRatio
+  //     )
+  //     if (matchingOtherPage) matchingPages.push(page)
+  //     return matchingPages
+  //   },
+  //   []
+  // )
+  // console.log(pageIRs)
+  // // console.log(scaledPages)
+
   const landingRatio = Math.max(1 - pageScroll / pageHeight, 0)
 
   return (
     <Layout pageContainerRef={pageContainerRef}>
         <FloatingNav
-          pages={pages.current}
+          pages={scaledPages}
           pageContainerRef={pageContainerRef}
           landingRatio={landingRatio}
           isMobile={isMobile} />
         <CombinedPageTemplate
-          landingPageData={{page: pages.current[0], landingRatio: landingRatio, isMobile: isMobile, ...landingFrontmatter}}
-          latestPageData={{page: pages.current[1], ...latestFrontmatter}}
-          previousWorkPageData={{page: pages.current[2], ...previousWorkFrontmatter}}
-          photographyPageData={{page: pages.current[3], ...photographyFrontmatter}}
-          contactPageData={{page: pages.current[4], ...contactFrontmatter}}
+          landingPageData={{page: scaledPages[0], landingRatio: landingRatio, isMobile: isMobile, ...landingFrontmatter}}
+          latestPageData={{page: scaledPages[1], ...latestFrontmatter}}
+          previousWorkPageData={{page: scaledPages[2], ...previousWorkFrontmatter}}
+          photographyPageData={{page: scaledPages[3], ...photographyFrontmatter}}
+          contactPageData={{page: scaledPages[4], ...contactFrontmatter}}
         />
-        <PageBackground pages={pages.current} />
+        <PageBackground pages={scaledPages} />
     </Layout>
   )
 }
