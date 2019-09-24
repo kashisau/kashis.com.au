@@ -15,16 +15,31 @@ export const PhotographyPageTemplate = ({
   photos,
 }) => 
   <>
-    <h1>{title}</h1>
-    <main dangerouslySetInnerHTML={{__html: body}} />
-    {photos.map(
-      (photo, i) =>
-        <aside key={i}>
-          <h2>{photo.title}</h2>
-          <Img fluid={photo.image.childImageSharp.fluid} title={`Screenshot of ${photo.title}`} />
-          <p dangerouslySetInnerHTML={{__html: photo.blurb}} />
-        </aside>
-    )}
+    <div className={[styles.body, styles.lightText].join(' ')}>
+      <div dangerouslySetInnerHTML={{__html: body}} />
+    </div>
+    <section className={styles.featureGallery}>
+      <ul className={styles.featureGalleryRails}>
+      {photos.map(
+        (photo, i) =>
+          <li className={styles.galleryItem} key={i}>
+            <article>
+              <Img
+                className={styles.galleryItemContainer}
+                fluid={photo.image.childImageSharp.fluid}
+                style={{ 
+                  width:  `calc((100vh - 18em)*${photo.image.childImageSharp.fluid.aspectRatio})`
+                }}
+                title={`Kashi Samaraweera's photo: ${photo.title}`} />
+              {/* <div className={['hiddenFeatures'].join(' ')}>
+                <h2 className={[styles.featureHeading ,styles.featureHiddenUntilHover].join(' ')}>{photo.title}</h2>
+                <p className={[styles.featureBlurb ,styles.featureHiddenUntilHover].join(' ')} dangerouslySetInnerHTML={{__html: photo.blurb}} />
+              </div> */}
+            </article>
+          </li>
+      )}
+      </ul>
+    </section>
   </>
 
 PhotographyPageTemplate.propTypes = {

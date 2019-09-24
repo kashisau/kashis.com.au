@@ -5,6 +5,7 @@
   background-image: url(/img/landing-hero.jpg);
   background-size: cover;
   position: relative;
+  scroll-margin-top: 0;
 }
 
 .LayoutLanding::before {

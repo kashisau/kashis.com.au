@@ -7,6 +7,8 @@
   margin: 0 auto;
   grid-template-columns: 3fr 1fr;
   grid-template-rows: min-content auto;
+  scroll-snap-align: start;
+  scroll-margin-top: 1em;
 }
 
 @media (min-width: 768px) {
@@ -14,7 +16,7 @@
     padding: 0 5em;
     min-height: calc(100vh - 2em);
     grid-template-rows: min-content auto;
-    scroll-snap-align: start;
+    scroll-margin-top: 0;
   }
 }
 

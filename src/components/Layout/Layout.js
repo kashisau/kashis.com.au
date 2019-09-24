@@ -10,7 +10,7 @@ import styles from './layout.module.css'
 const TemplateWrapper = ({ pageContainerRef, children }) => {
   const { title, description } = useSiteMetadata()
   return (
-    <div>
+    <>
       <Helmet>
         <html lang="en" />
         <title>{title}</title>
@@ -50,7 +50,7 @@ const TemplateWrapper = ({ pageContainerRef, children }) => {
       <div className={styles.pageContainer} ref={pageContainerRef}>
         {children}
       </div>
-    </div>
+    </>
   )
 }
 
