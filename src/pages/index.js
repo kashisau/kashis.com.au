@@ -85,7 +85,7 @@ const CombinedPage = ({ data }) => {
       observer.current = new window.IntersectionObserver(
         (entries) => updatePagesIntersection(entries),
         {
-          threshold: [...Array(1001).keys()].map((p, q) => q/1000)
+          threshold: [...Array(101).keys()].map((p, q) => q/100)
         }
       )
       const currentObserver = observer.current
@@ -121,22 +121,6 @@ const CombinedPage = ({ data }) => {
     page => ({...page, intersectionRatio: page.intersectionRatio * activePageScaler})
   )
 
-  // const pageIRs = scaledPages.reduce(
-  //   (matchingPages, page) => {
-  //     const matchingOtherPage = scaledPages.find(
-  //       (searchPage) => 
-  //         page.intersectionRatio > 0
-  //         && searchPage !== page
-  //         && searchPage.intersectionRatio === page.intersectionRatio
-  //     )
-  //     if (matchingOtherPage) matchingPages.push(page)
-  //     return matchingPages
-  //   },
-  //   []
-  // )
-  // console.log(pageIRs)
-  // // console.log(scaledPages)
-
   const landingRatio = Math.max(1 - pageScroll / pageHeight, 0)
 
   return (
@@ -147,6 +131,8 @@ const CombinedPage = ({ data }) => {
           landingRatio={landingRatio}
           isMobile={isMobile} />
         <CombinedPageTemplate
+          pages={scaledPages}
+          isMobile={isMobile}
           landingPageData={{page: scaledPages[0], landingRatio: landingRatio, isMobile: isMobile, ...landingFrontmatter}}
           latestPageData={{page: scaledPages[1], ...latestFrontmatter}}
           previousWorkPageData={{page: scaledPages[2], ...previousWorkFrontmatter}}

@@ -34,13 +34,14 @@
   position: relative;
   text-decoration: none;
   display: grid;
-  grid-template-columns: 7em 18.5em;
+  grid-template-columns: 5em 12.5em;
   column-gap: 0.5em;
   z-index: 4;
 }
 
 @media (min-width: 768px) {
   .logoLockup {
+    grid-template-columns: 7em 18.5em;
     float: right;
     clear: none;  
   }
@@ -64,9 +65,14 @@
   word-spacing: 100vw;
   font-family: 'Merriweather Sans',sans-serif;
   letter-spacing: -.08em;
-  font-size: 3em;
+  font-size: 2em;
   font-style: normal;
   font-weight: 800;
+}
+@media (min-width: 768px) {
+  .logoType {
+    font-size: 3em;
+  }
 }
 
 .backgrounds {
