@@ -12,8 +12,8 @@
 @media (min-width: 768px) {
   .PageLayout {
     padding: 0 5em;
-    height: calc(100vh - 2em);
-    grid-template-rows: min-content calc(100vh - 19.5em);
+    min-height: calc(100vh - 2em);
+    grid-template-rows: min-content auto;
     scroll-snap-align: start;
   }
 }
@@ -44,7 +44,7 @@
 
 @media (min-width: 768px) {
   .pageLayoutMain {
-    max-height: calc(100vh - 17.5em);
+    /* max-height: calc(100vh - 17.5em); */
     grid-template-columns: 1fr 1fr;
   }
 }
