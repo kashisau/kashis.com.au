@@ -2,9 +2,9 @@ var proxy = require('http-proxy-middleware')
 
 module.exports = {
   siteMetadata: {
-    title: 'Gatsby + Netlify CMS Starter',
+    title: 'Kashi Samaraweera — A Sydney-based software engineer',
     description:
-      'This repo contains an example business website that is built with Gatsby, and Netlify CMS.It follows the JAMstack architecture by using Git as a single source of truth, and Netlify for continuous deployment, and CDN distribution.',
+      'Kashi Samaraweera is a web application developer with over 10 years of industry experience specialising in large-scale data driven apps for government, media, and healthcare in a modern, scalable and extensible way.',
   },
   plugins: [
     'gatsby-plugin-react-helmet',

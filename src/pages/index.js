@@ -121,25 +121,26 @@ const CombinedPage = ({ data }) => {
     page => ({...page, intersectionRatio: page.intersectionRatio * activePageScaler})
   )
 
-  const landingRatio = Math.max(1 - pageScroll / pageHeight, 0)
+  const landingRatio = Math.max(1 - pageScroll / 120, 0)
+  const pagesNormalised = isMobile? scaledPages : pages.current
 
   return (
     <Layout pageContainerRef={pageContainerRef}>
         <FloatingNav
-          pages={scaledPages}
+          pages={pagesNormalised}
           pageContainerRef={pageContainerRef}
           landingRatio={landingRatio}
           isMobile={isMobile} />
         <CombinedPageTemplate
-          pages={scaledPages}
+          pages={pagesNormalised}
           isMobile={isMobile}
-          landingPageData={{page: scaledPages[0], landingRatio: landingRatio, isMobile: isMobile, ...landingFrontmatter}}
-          latestPageData={{page: scaledPages[1], ...latestFrontmatter}}
-          previousWorkPageData={{page: scaledPages[2], ...previousWorkFrontmatter}}
-          photographyPageData={{page: scaledPages[3], ...photographyFrontmatter}}
-          contactPageData={{page: scaledPages[4], ...contactFrontmatter}}
+          landingPageData={{page: pagesNormalised[0], landingRatio: landingRatio, isMobile: isMobile, ...landingFrontmatter}}
+          latestPageData={{page: pagesNormalised[1], ...latestFrontmatter}}
+          previousWorkPageData={{page: pagesNormalised[2], ...previousWorkFrontmatter}}
+          photographyPageData={{page: pagesNormalised[3], ...photographyFrontmatter}}
+          contactPageData={{page: pagesNormalised[4], ...contactFrontmatter}}
         />
-        <PageBackground pages={scaledPages} />
+        <PageBackground pages={pagesNormalised} />
     </Layout>
   )
 }
@@ -178,6 +179,7 @@ export const pageQuery = graphql`
         }
         latestMarkdownFile {
           childMarkdownRemark {
+            html
             frontmatter {
               title
               description

@@ -3,11 +3,10 @@ templateKey: previous-work-page
 title: Previous work
 description: Previous work that I have been involved with
 image: /img/home-jumbotron.jpg
-body: >
-  As a full-stack developer within the Enterprise & Digital Services team in the Special Broadcasting Service, I rebuilt The Feed website using a combination of t3js and SASS, fetching data from an eventual consistency document caching system engineered by our team to decouple our legacy Drupal CMSs from their resentation layer using Symfony.
+body: |
+  I've had the opportunity to hone my skills in a range of industries from healthcare to government, from small agile teams to larger enterprise engineering teams in Australia's national public service broadcasters, the <abbr title="Special Broadcasting Service">SBS</abbr> and <abbr title="Australian Broadcasting Corporation">ABC</abbr>.
 
-
-  This project also allowed me to guide the implementation of a data layer in a bid to modernise our analytics approach across The Feed, SBS News and other SBS properties.
+  You can find a detailed list of my work history on my LinkedIn, get an idea of my code style and repo housekeeping on my GitHub, or simply download my resume in PDF format below.
 ctaPrimary:
   btnText: LinkedIn
   url: https://au.linkedin.com/in/kashisau

@@ -41,12 +41,9 @@
   }
 /* } */
 
-.layout4 {
-  
-}
 @media (min-width: 768px) {
   .layout4 {
-    grid-template-columns: repeat(12, 12fr);
+    grid-template-columns: repeat(12, 12fr) !important;
   }
 }
 
@@ -271,4 +268,14 @@ color: white;
   height: calc(100vh-18em);
   display: inline-block;
   box-shadow: 0px 0px 20px rgba(0,0,0,0.16);
+}
+
+.contactMode {
+  font-size: 1.75em;
+}
+
+@media (min-width: 768px) {
+  .contactMode {
+    font-size: 1.5em;
+  }
 }

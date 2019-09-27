@@ -4,9 +4,12 @@ title: Latest project
 description: The latest project that I'm working on
 image: /img/latest-kathmandu.jpg
 subheading: Volunteering
-body: >
+body: |
   I’m currently living in Kathmandu, Nepal, where I’m applying my professional skills as a IT Officer in Kirtipur Municipality for 12 months, as part of the Australian Volunteers Program.
-  Find out more about this adventure on my co-authored blog, <em>The Unlikely Sherpas</em>.
+
+  The duties involve finding ways to bring transparency to government process through technology, and implementing software that makes local government services more widely accessible to the people of Kirtipur and Nepal more broadly.
+  
+  Find out more about this adventure on my co-authored blog, _The Unlikely Sherpas_.
 ctaPrimary:
   btnText: The Unlikely Sherpas
   url: https://medium.com/the-unlikely-sherpas

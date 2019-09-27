@@ -1,6 +1,7 @@
 import React, { useRef } from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
+import marked from 'marked'
 import Img from 'gatsby-image'
 
 import LayoutLeft from '../components/LayoutLeft'
@@ -16,7 +17,7 @@ export const PhotographyPageTemplate = ({
 }) => 
   <>
     <div className={[styles.body, styles.lightText].join(' ')}>
-      <div dangerouslySetInnerHTML={{__html: body}} />
+      <div dangerouslySetInnerHTML={{__html: marked(body)}} />
     </div>
     <section className={styles.featureGallery}>
       <ul className={styles.featureGalleryRails}>

@@ -2,6 +2,7 @@ import React, { useRef } from 'react'
 import PropTypes from 'prop-types'
 import { Link, graphql } from 'gatsby'
 import Img from 'gatsby-image'
+import marked from 'marked'
 
 import LayoutLeft from '../components/LayoutLeft'
 import styles from './pagestyles.module.css'
@@ -16,7 +17,7 @@ export const LatestPageTemplate = ({
 }) => (
   <>
     <div className={styles.body}>
-      <p dangerouslySetInnerHTML={{__html: body}} />
+      <div dangerouslySetInnerHTML={{__html: marked(body)}} />
       {[ctaPrimary, ctaSecondary].map(
         (cta, i) =>
           cta && <a className={[styles.buttonLink, i!==0? styles.buttonLinkSecondaryDark : styles.buttonLinkDark].join(' ')} href={cta.url} title={cta.title} key={i}>{cta.btnText}</a>

@@ -1,6 +1,7 @@
 import React, { useRef } from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
+import marked from 'marked'
 import Img from 'gatsby-image'
 
 import LayoutRight from '../components/LayoutRight'
@@ -19,7 +20,7 @@ export const ContactPageTemplate = ({
         <h2>{section.sectionTitle}</h2>
         {section.links.map(
           (link, i) => <section key={i}>
-              <p dangerouslySetInnerHTML={{ __html: link.blurb }} />
+              <div dangerouslySetInnerHTML={{ __html: marked(link.blurb) }} />
               <a className={[styles.buttonLink, i % 2? styles.buttonLinkSecondaryDark : styles.buttonLinkDark].join(' ')} href={link.url} title={link.title}>{link.btnText}</a>
             </section>
         )}
@@ -29,9 +30,9 @@ export const ContactPageTemplate = ({
       <h2>Connect</h2>
       <p>Finally, if you wish to contact me for any other reason, you may send me an email or reach out via phone:</p>
       <h3>Email</h3>
-      <p>{email}</p>
+      <p className={styles.contactMode}>{email}</p>
       <h3>Phone</h3>
-      <p>{phone}</p>
+      <p className={styles.contactMode}>{phone}</p>
     </section>
   </>
 
