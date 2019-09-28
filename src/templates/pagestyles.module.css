@@ -230,13 +230,14 @@ color: white;
 
 .featureGallery {
   overflow-x: scroll;
+  -webkit-overflow-scrolling: touch;
   margin: 0 -2em 0 -2em;
 }
 
 @media (min-width: 768px) {
   .featureGallery {
     margin-top: -5em;
-    scroll-snap-type: x proximity;
+    scroll-snap-type: x mandatory;
   }
 }
 

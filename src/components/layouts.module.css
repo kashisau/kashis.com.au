@@ -9,7 +9,6 @@
   grid-template-rows: min-content auto;
   scroll-snap-align: start;
   scroll-margin-top: 1em;
-  -webkit-overflow-scrolling: touch;
 }
 
 @media (min-width: 768px) {
