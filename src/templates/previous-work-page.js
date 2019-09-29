@@ -29,11 +29,11 @@ export const PreviousWorkPageTemplate = ({
       {works.map(
         (work, i) =>
           <aside className={[styles[`leftFeature4x4Feature${i}`]].join(' ')} key={i}>
-            <Img fluid={work.image.childImageSharp.fluid} title={`Screenshot of ${work.title}`} />
+            <Img className={styles.feature4x4Image} fluid={work.image.childImageSharp.fluid} title={`Screenshot of ${work.title}`} />
             <div className={['hiddenFeatures'].join(' ')}>
               <h2 className={[styles.featureHeading ,styles.featureHiddenUntilHover].join(' ')}>{work.title}</h2>
               <p className={[styles.featureBlurb ,styles.featureHiddenUntilHover].join(' ')} dangerouslySetInnerHTML={{__html: work.blurb}} />
-              {work.liveUrl && <a className={[styles.buttonLink, styles.buttonLinkLight, styles.featureUrl, styles.featureHiddenUntilHover].join(' ')} href={work.liveUrl} title={`See '${work.title}' online`}>{work.title}</a>}
+              {work.liveUrl && <a className={[styles.buttonLink, styles.buttonLinkLight, styles.featureUrl, styles.featureHiddenUntilHover].join(' ')} href={work.liveUrl} title={`See '${work.title}' online`} target="blank" rel="noopener">{work.title}</a>}
               {!work.liveUrl && <span className={[styles.buttonLink, styles.buttonLinkSecondaryLight, styles.featureUrl, styles.featureHiddenUntilHover, styles.buttonLinkDisabled].join(' ')} title={`'${work.title}' is no longer available online`}>No longer available</span>}
             </div>
           </aside>

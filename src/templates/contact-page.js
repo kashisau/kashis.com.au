@@ -20,8 +20,8 @@ export const ContactPageTemplate = ({
         <h2>{section.sectionTitle}</h2>
         {section.links.map(
           (link, i) => <section key={i}>
-              <div dangerouslySetInnerHTML={{ __html: marked(link.blurb) }} />
-              <a className={[styles.buttonLink, i % 2? styles.buttonLinkSecondaryDark : styles.buttonLinkDark].join(' ')} href={link.url} title={link.title}>{link.btnText}</a>
+              <div className={styles.bodyText} dangerouslySetInnerHTML={{ __html: marked(link.blurb) }} />
+              <a className={[styles.buttonLink, i % 2? styles.buttonLinkSecondaryDark : styles.buttonLinkDark].join(' ')} href={link.url} title={link.title} target="blank" rel="noopener">{link.btnText}</a>
             </section>
         )}
       </section>

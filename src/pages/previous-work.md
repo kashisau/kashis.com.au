@@ -38,5 +38,5 @@ works:
   - abcIview:
     title: Changing Diabetes
     blurb: Architecting an extensible online learning platform for healthcare professionals across Australia
-    image: /img/work-changing-diabetes.jpg
+    image: /img/work-changing-diabetes.png
 ---

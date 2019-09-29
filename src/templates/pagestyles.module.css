@@ -47,10 +47,14 @@
   }
 }
 
+.bodyText {
+  font-size: 1.25em;
+}
+
 .body {
+  composes: bodyText;
   grid-column: 1 / 1;
   grid-row: 2 / 3;
-  font-size: 1.25em;
 }
 @media (min-width: 768px) {
   .body {
@@ -60,6 +64,7 @@
 }
 
 .bodyRight {
+  composes: bodyText;
   font-size: 1.25em;
   grid-column: 1 / 2;
   grid-row: 2 / 3;
@@ -92,7 +97,7 @@
 .leftFeature4x4 {
   display: grid;
   grid-template-columns: repeat(8, 8fr);
-  grid-template-rows: min-content min-content;
+  grid-template-rows: repeat(2, 36vh);
   column-gap: 1em;
   row-gap: 1em;
 }
@@ -122,6 +127,10 @@
 .feature4x4 {
   box-shadow: 0 0 20px rgba(0,0,0,0.16);
   position: relative;
+}
+
+.feature4x4Image {
+  height: 36vh;
 }
 
 .leftFeature4x4Feature0 {
