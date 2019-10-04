@@ -12,12 +12,12 @@ import ContactPage from '../templates/contact-page'
 import PageBackground from '../components/PageBackground'
 import FloatingNav from '../components/FloatingNav'
 
-export const CombinedPageTemplate = ({contactPageData, photographyPageData, previousWorkPageData, latestPageData, landingPageData}) =>
+export const CombinedPageTemplate = ({contactPageData, photographyPageData, previousWorkPageData, latestPageData, landingPageData, isMobile}) =>
   <>
-    <LandingPage isMobile={landingPageData.isMobile} landingRatio={landingPageData.landingRatio} page={landingPageData.page} data={{...landingPageData}} />
+    <LandingPage isMobile={isMobile} landingRatio={landingPageData.landingRatio} page={landingPageData.page} data={{...landingPageData}} />
     <LatestPage page={latestPageData.page} data={{...latestPageData}} />
     <PreviousWorkPage page={previousWorkPageData.page} data={{...previousWorkPageData}} />
-    <PhotographyPage page={photographyPageData.page} data={{...photographyPageData}} />
+    <PhotographyPage isMobile={isMobile} page={photographyPageData.page} data={{...photographyPageData}} />
     <ContactPage page={contactPageData.page} data={{...contactPageData}} />
   </>
 

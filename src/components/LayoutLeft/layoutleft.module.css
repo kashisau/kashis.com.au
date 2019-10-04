@@ -1,7 +1,8 @@
 .LayoutLeft {
   composes: PageLayout from '../layouts.module.css';
   grid-template-columns: 1fr 3fr;
-  max-width: 109.25em;
+  /* max-width: 109.25em; */
+  max-width: none;
 }
 
 .header {
@@ -22,6 +23,12 @@
 }
 
 @media (min-width: 768px) {
+  .main {
+    grid-template-columns: 2fr 3fr;
+  }
+}
+
+@media (min-width: 768px) and (min-height: 600px) {
   .main {
     grid-template-columns: 1fr 3fr;
   }

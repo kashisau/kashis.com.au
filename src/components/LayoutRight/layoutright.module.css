@@ -1,7 +1,8 @@
 .LayoutRight {
   composes: PageLayout from '../layouts.module.css';
   grid-template-columns: 3fr 1fr;
-  max-width: 101.25em;
+  /* max-width: 101.25em; */
+  max-width: none;
 }
 
 .header {
@@ -24,7 +25,13 @@
 
 @media (min-width: 768px) {
   .main {
-    grid-template-columns: 5fr 3fr;
+    grid-template-columns: 3fr 3fr;
+  }
+}
+
+@media (min-width: 768px) and (min-height: 600px) {
+  .main {
+    grid-template-columns: 3fr 2fr;
   }
 }
 

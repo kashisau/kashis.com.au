@@ -28,7 +28,7 @@ export const ContactPageTemplate = ({
     )}
     <section className={styles.contactSection}>
       <h2>Connect</h2>
-      <p>Finally, if you wish to contact me for any other reason, you may send me an email or reach out via phone:</p>
+      <p className={styles.bodyText}>Finally, if you wish to contact me for any other reason, you may send me an email or reach out via phone:</p>
       <h3>Email</h3>
       <p className={styles.contactMode}>{email}</p>
       <h3>Phone</h3>

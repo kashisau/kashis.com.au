@@ -10,17 +10,23 @@ import styles from './pagestyles.module.css'
 export const PhotographyPageTemplate = ({
   title,
   body,
+  isMobile,
   ctaPrimary,
   ctaSecondary,
   ctaTertiary,
   photos,
 }) => 
   <>
-    <div className={[styles.body, styles.lightText].join(' ')}>
-      <div dangerouslySetInnerHTML={{__html: marked(body)}} />
-    </div>
     <section className={styles.featureGallery}>
       <ul className={styles.featureGalleryRails}>
+        {!isMobile 
+          && <li className={[styles.galleryItem, styles.galleryBodyItem, styles.bodyText, styles.lightText].join(' ')}>
+            <div dangerouslySetInnerHTML={{__html: marked(body)}}/>
+            {[ctaPrimary, ctaSecondary].map(
+              (cta, i) =>
+                cta && <a className={[styles.buttonLink, i!==0? styles.buttonLinkSecondaryLight : styles.buttonLinkDark, styles.buttonHoverToLight].join(' ')} href={cta.url} title={cta.title} key={i} target="blank" rel="noopener">{cta.btnText}</a>
+            )}
+          </li>}
       {photos.map(
         (photo, i) =>
           <li className={styles.galleryItem} key={i}>
@@ -41,6 +47,12 @@ export const PhotographyPageTemplate = ({
       )}
       </ul>
     </section>
+    {isMobile && <div className={[styles.bodyText, styles.lightText].join(' ')} dangerouslySetInnerHTML={{__html: marked(body)}} />}
+    {isMobile 
+      && [ctaPrimary, ctaSecondary].map(
+        (cta, i) =>
+          cta && <a className={[styles.buttonLink, i!==0? styles.buttonLinkSecondaryLight : styles.buttonLinkDark, styles.buttonHoverToLight].join(' ')} href={cta.url} title={cta.title} key={i} target="blank" rel="noopener">{cta.btnText}</a>
+      )}
   </>
 
 PhotographyPageTemplate.propTypes = {
@@ -70,21 +82,22 @@ PhotographyPageTemplate.propTypes = {
   }))
 }
 
-const PhotographyPage = ({ data }) => {
+const PhotographyPage = ({ data, isMobile }) => {
   const { frontmatter } = data.markdownRemark
   const { 
     page = {name: 'photography', intersectionRatio: 0},
     pageRef
   } = data
-
   return (
     <LayoutLeft
       heading={frontmatter.title}
       headingStyle={styles.photographyHeading}
       backgroundStyle={styles.photographyBackgroundColor}
+      mainStyle={styles.fullPage}
       page={page}
       pageRef={pageRef}>
       <PhotographyPageTemplate
+        isMobile={isMobile}
         image={frontmatter.image}
         description={frontmatter.description}
         body={frontmatter.body}
