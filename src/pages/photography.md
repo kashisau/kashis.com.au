@@ -30,4 +30,8 @@ photos:
     title: Modality
     blurb: Taking care of temple grounds, a lady sweeps leaves from the water as patrons queue to pay their respects
     image: /img/photo-modality.jpg
+  - himalayas:
+    title: Alternate Peaks
+    blurb: The imposing peaks behind the mountain town of Kyangjin Gumba in Nepalese Himalayas
+    image: /img/photo-alternate-peaks.jpg
 ---
