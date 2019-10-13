@@ -51,6 +51,10 @@
   font-size: 1.25em;
 }
 
+a {
+  color: rgba(221, 230, 235, 1);
+}
+
 .body {
   composes: bodyText;
   grid-column: 1 / 1;
@@ -253,6 +257,8 @@ color: white;
   .featureGallery {
     margin-top: -5em;
     scroll-snap-type: x mandatory;
+    margin-left: -5em;
+    padding-left: 3em;
   }
 }
 
@@ -267,7 +273,13 @@ color: white;
     margin-right: -5em;
     padding-left: 5em;
     padding-right: 5em;
-  }  
+  }
+
+  .fullPageNoBleed {
+    margin-left: -8em;
+    margin-right: -8em;
+    padding-left: 8em;
+  }
 }
 
 .featureGalleryRails {

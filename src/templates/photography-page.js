@@ -93,7 +93,7 @@ const PhotographyPage = ({ data, isMobile }) => {
       heading={frontmatter.title}
       headingStyle={styles.photographyHeading}
       backgroundStyle={styles.photographyBackgroundColor}
-      mainStyle={styles.fullPage}
+      mainStyle={[styles.fullPage, styles.fullPageNoBleed].join(' ')}
       page={page}
       pageRef={pageRef}>
       <PhotographyPageTemplate

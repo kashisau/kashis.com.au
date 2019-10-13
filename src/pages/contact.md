@@ -39,15 +39,15 @@ sections:
   - photography:
     sectionTitle: "Photography"
     links:
-      - photography:
+      - instagram:
         blurb: >
           Follow my progress as a photographer either on my Instagram account, @kashis.photo; or on my Flicker account, kashisau.
         btnText: "Flickr"
         title: "See my photos on Flickr"
         url: "https://www.flickr.com/people/kashisau/"
-      - theunlikelysherpas:
+      - flickr:
         blurb: ""
-        btnText: "@kashis.photo"
+        btnText: "@kashis.photo on Instagram"
         title: "See my photos on Instagram"
         url: "https://www.instagram.com/kashis.photo/"
 ---
