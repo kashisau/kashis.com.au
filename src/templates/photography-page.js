@@ -19,14 +19,13 @@ export const PhotographyPageTemplate = ({
   <>
     <section className={styles.featureGallery}>
       <ul className={styles.featureGalleryRails}>
-        {!isMobile 
-          && <li className={[styles.galleryItem, styles.galleryBodyItem, styles.bodyText, styles.lightText].join(' ')}>
-            <div dangerouslySetInnerHTML={{__html: marked(body)}}/>
-            {[ctaPrimary, ctaSecondary].map(
-              (cta, i) =>
-                cta && <a className={[styles.buttonLink, i!==0? styles.buttonLinkSecondaryLight : styles.buttonLinkDark, styles.buttonHoverToLight].join(' ')} href={cta.url} title={cta.title} key={i} target="blank" rel="noopener">{cta.btnText}</a>
-            )}
-          </li>}
+        <li className={[styles.galleryItem, styles.galleryBodyItem, styles.bodyText, styles.lightText].join(' ')}>
+          <div dangerouslySetInnerHTML={{__html: marked(body)}}/>
+          {[ctaPrimary, ctaSecondary].map(
+            (cta, i) =>
+              cta && <a className={[styles.buttonLink, i!==0? styles.buttonLinkSecondaryLight : styles.buttonLinkDark, styles.buttonHoverToLight].join(' ')} href={cta.url} title={cta.title} key={i} target="blank" rel="noopener">{cta.btnText}</a>
+          )}
+        </li>
       {photos.map(
         (photo, i) =>
           <li className={styles.galleryItem} key={i}>
