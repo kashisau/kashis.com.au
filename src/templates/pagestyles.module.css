@@ -340,6 +340,7 @@ color: white;
 
 .contactMode {
   font-size: 1.75em;
+  color: #171517;
 }
 
 @media (min-width: 768px) {

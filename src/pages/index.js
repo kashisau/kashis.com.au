@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useLayoutEffect, useState } from 'react'
+import React, { useRef, useEffect, useState } from 'react'
 import { graphql } from 'gatsby'
 
 import Layout from '../components/Layout'
@@ -37,7 +37,6 @@ const CombinedPage = ({ data }) => {
   const [isMobile, updateIsMobile] = useState((typeof(window) === 'undefined')? false : window.innerWidth < 768);
   const [pagesIntersection, updatePagesIntersection] = useState([])
   const [pageScroll, updatePageScroll] = useState(0)
-  const [pageHeight, updatePageHeight] = useState(1)
 
   
   const observer = useRef()
@@ -57,11 +56,9 @@ const CombinedPage = ({ data }) => {
         'resize',
         (resizeEvent) => {
           updateIsMobile(window.innerWidth < 768)
-          updatePageHeight(window.innerHeight)
         }
       )
       updateIsMobile(window.innerWidth < 768)
-      updatePageHeight(window.innerHeight)
     },
     []
   )

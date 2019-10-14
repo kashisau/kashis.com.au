@@ -4,11 +4,11 @@ title: Photography
 description: Some of the photos that I take
 image: /img/home-jumbotron.jpg
 body: |
-  My interest in photography flourished with my love for travel.
+  My interest in photography flourished over the years with my interest in travel.
 
-  As I've further enjoyed the privilege of seeing more of the world, I've adopted the task of sharing the culture and landscapes I've been privy to, learning more of the art and science of photography as I go along.
+  As I've further enjoyed the privilege of seeing the world, I've adopted the task of sharing the culture and landscapes I've been privy to, leaning more on the art and science of photography as I go along.
   
-  I publish a selection of photos on my alternate Instagram account, <a href="https://www.instagram.com/kashis.photo/" title="See my photos on Instagram">@kashis.photo</a> or on <a href="https://www.flickr.com/people/kashisau/" title="See my photos on Flickr">Flickr</a>.
+  I publish a selection of photos on my alternate Instagram account, <a href="https://www.instagram.com/kashis.photo/" title="See my photos on Instagram" target="blank" rel="noopener">@kashis.photo</a> or on <a href="https://www.flickr.com/people/kashisau/" title="See my photos on Flickr" target="blank" rel="noopener">Flickr</a>.
 ctaPrimary:
   btnText: "@kashis.photo on Instagram"
   url: https://www.instagram.com/kashis.photo/

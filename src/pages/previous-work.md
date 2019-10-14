@@ -4,7 +4,7 @@ title: Previous work
 description: Previous work that I have been involved with
 image: /img/home-jumbotron.jpg
 body: |
-  I've had the opportunity to hone my skills in a range of industries from healthcare to government, from small agile teams to larger enterprise engineering teams in Australia's national public service broadcasters, the <abbr title="Special Broadcasting Service">SBS</abbr> and <abbr title="Australian Broadcasting Corporation">ABC</abbr>.
+  I've had the opportunity to hone my skills in a range of industries from healthcare to local, state and federal government organisation. I've worked with small agile teams as well as larger enterprise engineering teams in Australia's national public service broadcasters, the <abbr title="Australian Broadcasting Corporation">ABC</abbr> and <abbr title="Special Broadcasting Service">SBS</abbr>, working on each of their video on demand and news publishing platforms repsectively.
 
   You can find a detailed list of my work history on my LinkedIn, get an idea of my code style and repo housekeeping on my GitHub, or simply download my resume in PDF format below.
 ctaPrimary:
