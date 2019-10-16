@@ -34,4 +34,8 @@ photos:
     title: Alternate Peaks
     blurb: The imposing peaks behind the mountain town of Kyangjin Gumba in Nepalese Himalayas
     image: /img/photo-alternate-peaks.jpg
+  - tram:
+    title: Mountain Tram
+    blurb: A mountside tram traverses in front of the Swiss alps in Lauterbraunnen.
+    image: /img/photo-mountain-tram.jpg
 ---

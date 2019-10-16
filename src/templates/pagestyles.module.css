@@ -88,23 +88,68 @@ a {
 .leftFeature {
   grid-column: 1 / 2;
   grid-row: 1 / 2;
+  overflow-x: scroll;
+  -webkit-overflow-scrolling: touch;
+  margin: 0 -2em;
 }
 
 @media (min-width: 768px) {
   .leftFeature {
     grid-column: 1 / 2;
     grid-row: 1 / 2;
+    overflow: auto;
+    overflow-x: auto;
+    margin: 0;
     margin-top: -4.5em;
   }
 }
 
-.leftFeature4x4 {
-  display: grid;
-  grid-template-columns: repeat(8, 8fr);
-  grid-template-rows: repeat(2, 36vh);
-  column-gap: 1em;
-  row-gap: 1em;
+.featureScroller {
+  padding: 1em 1.5em;
+  margin: -1em 0 0 0;
+  display: block;
+  list-style-type: none;
+  white-space: nowrap;
+  float: left;
+  clear: left;
+  scroll-snap-type: x mandatory;
 }
+
+@media (min-width: 768px) {
+  .featureScroller {
+    display: grid;
+    grid-template-columns: repeat(8, 8fr);
+    grid-template-rows: repeat(2, 2fr);
+    column-gap: 1em;
+    row-gap: 1em;
+    padding: 0;
+    white-space: normal;
+    float: none;
+    clear: none;
+  
+  }
+}
+
+.leftFeature4x4Item {
+  list-style: none;
+  margin: 0 0.5em;
+  padding: 0;
+  min-width: calc(100vw - 4em);
+  display: inline-block;
+  box-shadow: 0 0 20px rgba(0,0,0,0.16);
+  scroll-snap-align: center;
+}
+
+@media (min-width: 768px) {
+  .leftFeature4x4 {
+    display: block;
+  }
+
+  .leftFeature4x4Item {
+    min-width: auto;
+  }
+}
+
 
 .featureHeading {
   color: white;
@@ -113,13 +158,24 @@ a {
   font-size: 1.5em;
   text-transform: uppercase;
   letter-spacing: -0.02em;
-  padding: 1em 2em 0em 2em;
-  margin: 1em 0;
+  padding: 1rem 0.5em 0 1rem;
+  margin: 0;
 }
 
 .featureBlurb {
   color: white;
-  padding: 0 3em 0 3em;
+  padding: 0 1rem;
+}
+
+@media (min-width: 768px) {
+  .featureHeading {
+    padding: 1em 2em 0em 2em;
+    margin: 1em 0;
+  }
+  
+  .featureBlurb {
+    padding: 0 3em 0 3em;
+  }
 }
 
 .featureHiddenUntilHover {
@@ -243,8 +299,14 @@ color: white;
 
 .featureUrl {
   padding: 1em 2em;
-  margin: 1em 1em 1em 3em;
+  margin: 0 1rem;
   display: inline-block;
+}
+
+@media (min-width: 768px) {
+  .featureUrl {
+    margin: 1em 1em 1em 3em;
+  }  
 }
 
 .featureGallery {

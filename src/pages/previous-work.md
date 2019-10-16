@@ -32,7 +32,7 @@ works:
     liveUrl: https://iview.abc.net.au
   - sbsTheFeed:
     title: SBS News & The Feed
-    blurb: Front-end development, data layer implementation and engineering content publishing systems for SBS&nbsp;News and The&nbsp;Feed
+    blurb: Front-end development, data layer, and engineering content publishing systems for SBS&nbsp;News and The&nbsp;Feed
     image: /img/work-sbs-the-feed.jpg
     liveUrl: https://www.sbs.com.au/news
   - abcIview:
