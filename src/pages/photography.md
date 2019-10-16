@@ -22,18 +22,18 @@ photos:
     title: Tower of Babel
     blurb: A tower that is built for a yearly festival in Kathmandu Vally
     image: /img/photo-tower-of-babel.jpg
-  - sunset:
-    title: Sunset on the Arno
-    blurb: Sunset captured on the Arno river in Florence
-    image: /img/photo-sunset-on-the-arno.jpg
-  - temple:
-    title: Modality
-    blurb: Taking care of temple grounds, a lady sweeps leaves from the water as patrons queue to pay their respects
-    image: /img/photo-modality.jpg
   - himalayas:
     title: Alternate Peaks
     blurb: The imposing peaks behind the mountain town of Kyangjin Gumba in Nepalese Himalayas
     image: /img/photo-alternate-peaks.jpg
+  - temple:
+    title: Modality
+    blurb: Taking care of temple grounds, a lady sweeps leaves from the water as patrons queue to pay their respects
+    image: /img/photo-modality.jpg
+  - sunset:
+    title: Sunset on the Arno
+    blurb: Sunset captured on the Arno river in Florence
+    image: /img/photo-sunset-on-the-arno.jpg
   - tram:
     title: Mountain Tram
     blurb: A mountside tram traverses in front of the Swiss alps in Lauterbraunnen.
