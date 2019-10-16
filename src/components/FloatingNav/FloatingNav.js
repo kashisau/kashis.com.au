@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react'
+import React from 'react'
 import styles from './floatingnav.module.css'
 import Logo from '../../img/kashis-logo.png'
 
@@ -6,10 +6,10 @@ const FloatingNav = ({ pages, landingRatio = 1 }) => {
   const navScale = 0.5 + (landingRatio) * 0.5
   return (
     <nav className={styles.FloatingNav} style={{ transform: `scale(${navScale}) translateY(${landingRatio*5}em)`}}>
-      <a className={styles.logoLockup} href="#" title="Scroll to top">
-        <img className={styles.logo} src={Logo} title="Kashis.com.au's Logo" />
+      <span className={styles.logoLockup} title="Scroll to top">
+        <img className={styles.logo} src={Logo} alt="Kashis.com.au's Logo" />
         <h1 className={styles.logoType}>Kashi Samaraweera</h1>
-      </a>
+      </span>
       <div className={styles.backgrounds}>
         {pages.map(
           (page, i) => {

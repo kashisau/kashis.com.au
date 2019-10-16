@@ -1,8 +1,7 @@
-import React, { useRef } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import marked from 'marked'
-import Img from 'gatsby-image'
 
 import LayoutRight from '../components/LayoutRight'
 import styles from './pagestyles.module.css'
@@ -30,9 +29,9 @@ export const ContactPageTemplate = ({
       <h2>Connect</h2>
       <p className={styles.bodyText}>Finally, if you wish to contact me for any other reason, you may send me an email or reach out via phone:</p>
       <h3>Email</h3>
-      <p className={styles.contactMode}>{email}</p>
+      <a className={styles.contactMode} href={encodeURI(`mailto:${email}?subject=A question for Kashi Samaraweera`)}>{email}</a>
       <h3>Phone</h3>
-      <p className={styles.contactMode}>{phone}</p>
+      <p className={styles.contactMode} href={`tel:${phone.replace(/\s/g,'')}`}>{phone}</p>
     </section>
   </>
 

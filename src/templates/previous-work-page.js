@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import Img from 'gatsby-image'
@@ -26,18 +26,20 @@ export const PreviousWorkPageTemplate = ({
       )}
     </div>
     <section className={[styles.leftFeature, styles.leftFeature4x4].join(' ')}>
-      {works.map(
-        (work, i) =>
-          <aside className={[styles[`leftFeature4x4Feature${i}`]].join(' ')} key={i}>
-            <Img className={styles.feature4x4Image} fluid={work.image.childImageSharp.fluid} title={`Screenshot of ${work.title}`} />
-            <div className={['hiddenFeatures'].join(' ')}>
-              <h2 className={[styles.featureHeading ,styles.featureHiddenUntilHover].join(' ')}>{work.title}</h2>
-              <p className={[styles.featureBlurb ,styles.featureHiddenUntilHover].join(' ')} dangerouslySetInnerHTML={{__html: work.blurb}} />
-              {work.liveUrl && <a className={[styles.buttonLink, styles.buttonLinkLight, styles.featureUrl, styles.featureHiddenUntilHover].join(' ')} href={work.liveUrl} title={`See '${work.title}' online`} target="blank" rel="noopener">{work.title}</a>}
-              {!work.liveUrl && <span className={[styles.buttonLink, styles.buttonLinkSecondaryLight, styles.featureUrl, styles.featureHiddenUntilHover, styles.buttonLinkDisabled].join(' ')} title={`'${work.title}' is no longer available online`}>No longer available</span>}
-            </div>
-          </aside>
-      )}
+      <ul className={styles.featureScroller}>
+        {works.map(
+          (work, i) =>
+            <li className={[styles.leftFeature4x4Item, styles[`leftFeature4x4Feature${i}`]].join(' ')} key={i}>
+              <Img className={styles.feature4x4Image} fluid={work.image.childImageSharp.fluid} title={`Screenshot of ${work.title}`} />
+              <div className={['hiddenFeatures'].join(' ')}>
+                <h2 className={[styles.featureHeading ,styles.featureHiddenUntilHover].join(' ')}>{work.title}</h2>
+                <p className={[styles.featureBlurb ,styles.featureHiddenUntilHover].join(' ')} dangerouslySetInnerHTML={{__html: work.blurb}} />
+                {work.liveUrl && <a className={[styles.buttonLink, styles.buttonLinkLight, styles.featureUrl, styles.featureHiddenUntilHover].join(' ')} href={work.liveUrl} title={`See '${work.title}' online`} target="blank" rel="noopener">{work.title}</a>}
+                {!work.liveUrl && <span className={[styles.buttonLink, styles.buttonLinkSecondaryLight, styles.featureUrl, styles.featureHiddenUntilHover, styles.buttonLinkDisabled].join(' ')} title={`'${work.title}' is no longer available online`}>No longer available</span>}
+              </div>
+            </li>
+        )}
+      </ul>
     </section>
   </>
 )

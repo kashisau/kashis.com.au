@@ -1,6 +1,6 @@
-import React, { useRef } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
-import { Link, graphql } from 'gatsby'
+import { graphql } from 'gatsby'
 import Img from 'gatsby-image'
 import marked from 'marked'
 
