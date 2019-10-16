@@ -37,10 +37,10 @@ export const PhotographyPageTemplate = ({
                   width:  `calc((100vh - 18em)*${photo.image.childImageSharp.fluid.aspectRatio})`
                 }}
                 title={`Kashi Samaraweera's photo: ${photo.title}`} />
-              {/* <div className={['hiddenFeatures'].join(' ')}>
+              <div className={[styles.photoCaption, 'hiddenFeatures'].join(' ')}>
                 <h2 className={[styles.featureHeading ,styles.featureHiddenUntilHover].join(' ')}>{photo.title}</h2>
                 <p className={[styles.featureBlurb ,styles.featureHiddenUntilHover].join(' ')} dangerouslySetInnerHTML={{__html: photo.blurb}} />
-              </div> */}
+              </div>
             </article>
           </li>
       )}

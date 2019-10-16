@@ -20,19 +20,19 @@ ctaSecondary:
 photos:
   - babel:
     title: Tower of Babel
-    blurb: A tower that is built for a yearly festival in Kathmandu Vally
+    blurb: A wheeled chariot built for the yearly harvest festival in Kathmandu Valley.
     image: /img/photo-tower-of-babel.jpg
   - himalayas:
     title: Alternate Peaks
-    blurb: The imposing peaks behind the mountain town of Kyangjin Gumba in Nepalese Himalayas
+    blurb: The imposing peaks behind the mountain town of Kyangjin Gumba in Nepalese Himalayas.
     image: /img/photo-alternate-peaks.jpg
   - temple:
     title: Modality
-    blurb: Taking care of temple grounds, a lady sweeps leaves from the water as patrons queue to pay their respects
+    blurb: A lady sweeps leaves from the pond water as patrons queue to pay their respects.
     image: /img/photo-modality.jpg
   - sunset:
     title: Sunset on the Arno
-    blurb: Sunset captured on the Arno river in Florence
+    blurb: A Tuscan sunset captured on the Arno river in Florence in the summertime.
     image: /img/photo-sunset-on-the-arno.jpg
   - tram:
     title: Mountain Tram
