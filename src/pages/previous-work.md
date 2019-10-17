@@ -4,7 +4,7 @@ title: Previous work
 description: Previous work that I have been involved with
 image: /img/work-abc-iview.jpg
 body: |
-  Over the last ten years of my career I've had the chance to hone my skills in a range of industries from healthcare to local, state and federal government.
+  Over the last ten years of my career I've had the chance to hone my skills in a range of industries from healthcare to local, state and federal government organisations.
   
   I've worked with small agile teams, as well as larger enterprise engineering teams for each of Australia's national public service broadcasters, <a href="https://abc.net.au" title="Australian Broadcasting Corporation" target="blank" rel="noopener"><abbr title="Australian Broadcasting Corporation">ABC</abbr></a> and <a href="https://sbs.com.au" title="The Special Broadcasting Service" target="blank" rel="noopener"><abbr title="Special Broadcasting Service">SBS</abbr></a>, helping to build web applications and online services that are used by millions of Australians.
 
