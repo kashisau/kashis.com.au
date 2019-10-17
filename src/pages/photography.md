@@ -2,7 +2,7 @@
 templateKey: photography-page
 title: Photography
 description: Some of the photos that I take
-image: /img/home-jumbotron.jpg
+image: /img/photo-alternate-peaks.jpg
 body: |
   My interest in photography flourished over the years with my interest in travel.
 

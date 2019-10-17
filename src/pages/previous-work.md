@@ -2,7 +2,7 @@
 templateKey: previous-work-page
 title: Previous work
 description: Previous work that I have been involved with
-image: /img/home-jumbotron.jpg
+image: /img/work-abc-iview.jpg
 body: |
   I've had the opportunity to hone my skills in a range of industries from healthcare to local, state and federal government organisation. I've worked with small agile teams as well as larger enterprise engineering teams in Australia's national public service broadcasters, the <abbr title="Australian Broadcasting Corporation">ABC</abbr> and <abbr title="Special Broadcasting Service">SBS</abbr>, working on each of their video on demand and news publishing platforms repsectively.
 
