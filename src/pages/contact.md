@@ -11,13 +11,13 @@ sections:
     links:
       - instagram:
         blurb: >
-          Instagram helps keep my friends and family up to date on my travels, rock-climbing, and other adventures. Follow me @kashisamaraweera
+          Instagram helps keep my friends and family up to date on my travels, rock-climbing, and other adventures. Follow me @kashisamaraweera.
         btnText: "@kashisamaraweera"
         title: "Follow me on @kashisamaraweera"
         url: "https://www.instagram.com/kashisamaraweera/"
       - enroute:
         blurb: >
-          I’m in the midst of a BA in Philosophy and Linguistics, keeping a blog that tracks the output of my studies. It’s wordy, but available on Medium at En&nbsp;Route.
+          I’m in the midst of a BA in Philosophy and Linguistics, keeping a blog that tracks the output of my studies. It’s wordy, but available on Medium at _En&nbsp;Route_.
         btnText: "En Route"
         title: "Read my philosophical exports on En Route"
         url: "https://enroute.kashis.com.au/"
@@ -26,13 +26,13 @@ sections:
     links:
       - linkedin:
         blurb: >
-          Connect with my professional network on LinkedIn, where I keep my resumé as a living document detailing my experience.
+          Connect with my professional network on LinkedIn, where I keep my résumé as a living document outlining the work I've been involved in.
         btnText: "LinkedIn"
         title: "Connect with me on LinkedIn"
         url: "https://au.linkedin.com/in/kashisau"
       - theunlikelysherpas:
         blurb: >
-          I’m currently living in Kathmandu, Nepal, engaged as a volunteer ICT Officer in Kirtipur Municipality until March 2019. Follow my adventure at The&nbsp;Unlikely&nbsp;Sherpas
+          I’m currently living in Kathmandu, Nepal, volunteering as an ICT Officer in Kirtipur Municipality until March 2019. Read about it at _The&nbsp;Unlikely&nbsp;Sherpas_.
         btnText: "The Unlikely Sherpas"
         title: "Read about the progress of my volunteer role on The Unlikely Sherpas"
         url: "https://medium.com/the-unlikely-sherpas"

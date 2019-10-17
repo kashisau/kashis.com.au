@@ -17,7 +17,7 @@ export const LatestPageTemplate = ({
 }) => (
   <>
     <div className={styles.body}>
-      <div dangerouslySetInnerHTML={{__html: marked(body)}} />
+      <div className={styles.darkLinks} dangerouslySetInnerHTML={{__html: marked(body)}} />
       {[ctaPrimary, ctaSecondary].map(
         (cta, i) =>
           cta && <a className={[styles.buttonLink, i!==0? styles.buttonLinkSecondaryDark : styles.buttonLinkDark].join(' ')} href={cta.url} title={cta.title} key={i} target="blank" rel="noopener">{cta.btnText}</a>

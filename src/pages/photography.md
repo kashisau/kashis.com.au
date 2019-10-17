@@ -4,7 +4,7 @@ title: Photography
 description: Some of the photos that I take
 image: /img/photo-alternate-peaks.jpg
 body: |
-  My interest in photography flourished over the years with my interest in travel.
+  My interest in photography flourished over the years together with my love for exploration and nature.
 
   As I've further enjoyed the privilege of seeing the world, I've adopted the task of sharing the culture and landscapes I've been privy to, leaning more on the art and science of photography as I go along.
   

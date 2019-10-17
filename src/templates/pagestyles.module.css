@@ -51,6 +51,10 @@
   font-size: 1.25em;
 }
 
+.darkLinks a {
+  color: rgba(85, 122, 155, 1);
+}
+
 a {
   color: rgba(221, 230, 235, 1);
 }
@@ -404,7 +408,7 @@ color: white;
 
 .contactMode {
   font-size: 1.75em;
-  color: #171517;
+  color: #171517 !important;
 }
 
 @media (min-width: 768px) {
