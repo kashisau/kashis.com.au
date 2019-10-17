@@ -109,8 +109,7 @@ const CombinedPage = ({ data }) => {
 
   const activePage = pages.current.reduce(
     (activePage, page) => 
-      (page.intersectionRatio > 0
-      && page.intersectionRatio > activePage.intersectionRatio)? page : activePage
+      (page.intersectionRatio > activePage.intersectionRatio)? page : activePage
   )
 
   const activePageScaler = 1 / activePage.intersectionRatio
