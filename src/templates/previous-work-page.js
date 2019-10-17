@@ -22,7 +22,7 @@ export const PreviousWorkPageTemplate = ({
       <div dangerouslySetInnerHTML={{__html: marked(body)}} />
       {[ctaPrimary, ctaSecondary, ctaTertiary].map(
         (cta, i) =>
-          <a className={[styles.buttonLink, i!==0? styles.buttonLinkSecondaryLight : styles.buttonLinkLight].join(' ')} href={cta.url} title={cta.title} key={i}>{cta.btnText}</a>
+          <a className={[styles.buttonLink, i!==0? styles.buttonLinkSecondaryLight : styles.buttonLinkLight].join(' ')} href={cta.url} title={cta.title} key={i} target="blank" rel="noopener">{cta.btnText}</a>
       )}
     </div>
     <section className={[styles.leftFeature, styles.leftFeature4x4].join(' ')}>
