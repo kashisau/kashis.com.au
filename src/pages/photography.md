@@ -4,28 +4,24 @@ title: Photography
 description: Some of the photos that I take
 image: /img/photo-alternate-peaks.jpg
 body: |
-  My interest in photography flourished over the years together with my love for exploration and nature.
+  My interest in photography flourished along with my love of nature and exploration.
 
-  As I've further enjoyed the privilege of seeing the world, I've adopted the task of sharing the culture and landscapes I've been privy to, leaning more on the art and science of photography as I go along.
+  As I've had the chance to venture further afar from the modern comforts of home in Sydney, I've taken upon the task of documenting the culture and landscapes I'm privy to, learning more of the art and science of photography as I go along.
   
-  I publish a selection of photos on my alternate Instagram account, <a href="https://www.instagram.com/kashis.photo/" title="See my photos on Instagram" target="blank" rel="noopener">@kashis.photo</a> or on <a href="https://www.flickr.com/people/kashisau/" title="See my photos on Flickr" target="blank" rel="noopener">Flickr</a>.
+  I publish a selection of photos on <a href="https://www.flickr.com/people/kashisau/" title="See my photos on Flickr" target="blank" rel="noopener">Flickr</a>, and on my alternate Instagram account, <a href="https://www.instagram.com/kashis.photo/" title="See my photos on Instagram" target="blank" rel="noopener">@kashis.photo</a>.
 ctaPrimary:
-  btnText: "@kashis.photo on Instagram"
-  url: https://www.instagram.com/kashis.photo/
-  title: See my photos on Instagram
-ctaSecondary:
   btnText: "See my photos on Flickr"
   url: https://www.flickr.com/people/kashisau/
   title: See my photos on Flickr
+ctaSecondary:
+  btnText: "@kashis.photo on Instagram"
+  url: https://www.instagram.com/kashis.photo/
+  title: See my photos on Instagram
 photos:
-  - babel:
-    title: Tower of Babel
-    blurb: A wheeled chariot built for the yearly harvest festival in Kathmandu Valley.
-    image: /img/photo-tower-of-babel.jpg
-  - himalayas:
-    title: Alternate Peaks
-    blurb: The imposing peaks behind the mountain town of Kyangjin Gumba in Nepalese Himalayas.
-    image: /img/photo-alternate-peaks.jpg
+  - kagbeni:
+    title: Autumn in Kagbeni
+    blurb: A desolate tree sits in the town of Kagbeni in Nepal's arid and high-altitude Mustang region, dispossessed of its leaves for autumn.
+    image: /img/photo-autumn-in-kagbeni.jpg
   - temple:
     title: Modality
     blurb: A lady sweeps leaves from the pond water as patrons queue to pay their respects.
@@ -34,8 +30,28 @@ photos:
     title: Sunset on the Arno
     blurb: A Tuscan sunset captured on the Arno river in Florence in the summertime.
     image: /img/photo-sunset-on-the-arno.jpg
+  - babel:
+    title: Tower of Babel
+    blurb: A wheeled chariot built for the yearly harvest festival in Kathmandu Valley.
+    image: /img/photo-tower-of-babel.jpg
+  - jomsom:
+    title: Twilight in Jomsom
+    blurb: A mountain that forms the valley of Jomsom during the first flecks of sunrise.
+    image: /img/photo-jomson-sunrise.jpg
   - tram:
     title: Mountain Tram
     blurb: A mountside tram traverses in front of the Swiss alps in Lauterbraunnen.
     image: /img/photo-mountain-tram.jpg
+  - langtang:
+    title: Alternate Peaks
+    blurb: Two mountains behind the town of Kyangjin Gumba in the Langtang region of Nepal’s Himalayas.
+    image: /img/photo-alternate-peaks.jpg
+  - tatopani:
+    title: Sunset in Tatopani, Myagdi
+    blurb: The further mountain from the Kali Gandaki River gorge in Tatopani, Myagdi—within the Annapurna region of Nepal.
+    image: /img/photo-sunset-in-tatopani.jpg
+  - airport:
+    title: Mountain Takeoff
+    blurb: A plane is loaded on the runway at Jomsom Airport in Nepal's Mustang region, readying for an early morning flight to Pokhara.
+    image: /img/photo-airport-in-jomsom.jpg
 ---
