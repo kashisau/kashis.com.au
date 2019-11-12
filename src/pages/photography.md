@@ -4,9 +4,7 @@ title: Photography
 description: Some of the photos that I take
 image: /img/photo-alternate-peaks.jpg
 body: |
-  My interest in photography flourished along with my love of nature and exploration.
-
-  As I've had the chance to venture further afar from the modern comforts of home in Sydney, I've taken upon the task of documenting the culture and landscapes I'm privy to, learning more of the art and science of photography as I go along.
+  My interest in photography flourished along with my love of nature and exploration. And as I've ventured further into both, I've taken up the task of documenting the culture and landscapes that I've been witness to, learning more of the art and science of photography as I go along.
   
   I publish a selection of photos on <a href="https://www.flickr.com/people/kashisau/" title="See my photos on Flickr" target="blank" rel="noopener">Flickr</a>, and on my alternate Instagram account, <a href="https://www.instagram.com/kashis.photo/" title="See my photos on Instagram" target="blank" rel="noopener">@kashis.photo</a>.
 ctaPrimary:
@@ -18,6 +16,10 @@ ctaSecondary:
   url: https://www.instagram.com/kashis.photo/
   title: See my photos on Instagram
 photos:
+  - babel:
+    title: Tower of Babel
+    blurb: A wheeled chariot built for the yearly harvest festival in Kathmandu Valley.
+    image: /img/photo-tower-of-babel.jpg
   - kagbeni:
     title: Autumn in Kagbeni
     blurb: A desolate tree sits in the town of Kagbeni in Nepal's arid and high-altitude Mustang region, dispossessed of its leaves for autumn.
@@ -30,10 +32,10 @@ photos:
     title: Sunset on the Arno
     blurb: A Tuscan sunset captured on the Arno river in Florence in the summertime.
     image: /img/photo-sunset-on-the-arno.jpg
-  - babel:
-    title: Tower of Babel
-    blurb: A wheeled chariot built for the yearly harvest festival in Kathmandu Valley.
-    image: /img/photo-tower-of-babel.jpg
+  - flicker:
+    title: Flicker in darkness
+    blurb: A small temple in Kathmandu's southern suburb of Jawalakhel opens its doors for a nighttime devotional.
+    image: /img/photo-flicker-in-darkness.jpg
   - jomsom:
     title: Twilight in Jomsom
     blurb: A mountain that forms the valley of Jomsom during the first flecks of sunrise.

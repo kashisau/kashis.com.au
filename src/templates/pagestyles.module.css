@@ -394,7 +394,7 @@ color: white;
 .galleryBodyItem {
   vertical-align: top;
   white-space: normal;
-  max-width: calc(33vw - 2em);
+  max-width: calc(27vw - 2em);
   margin-top: 4em !important;
   display: none;
 }
