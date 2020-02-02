@@ -406,7 +406,7 @@ color: white;
 }
 
 
-.contactMode {
+.contactMode, a.contactMode {
   font-size: 1.75em;
   color: #171517 !important;
 }
