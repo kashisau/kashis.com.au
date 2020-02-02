@@ -4,8 +4,8 @@ import Logo from '../../img/kashis-logo.png'
 
 const FloatingNav = ({ pages, landingRatio = 1, isMobile = true }) => {
   const navScale = 0.5 + (landingRatio) * 0.5
-  const logoLockupDisplace = isMobile? (1-landingRatio) * 50 : 0;
-  const logoLockupMargin = isMobile? (1-landingRatio)  * -11 : 0;
+  const logoLockupDisplace = isMobile? (1-landingRatio) * 50 : 0
+  const logoLockupMargin = isMobile? (1-landingRatio)  * -11 : 0
   return (
     <nav className={styles.FloatingNav} style={{ transform: `scale(${navScale}) translateY(${landingRatio*5}em)`}}>
       {/* <span className={styles.logoLockup} style={{ transform: `translateX(calc(${logoLockupDisplace}vw + ${logoLockupMargin}rem))`}}> */}

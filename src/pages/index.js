@@ -117,7 +117,7 @@ const CombinedPage = ({ data }) => {
     page => ({...page, intersectionRatio: page.intersectionRatio * activePageScaler})
   )
 
-  const landingRatio = Math.max(1 - pageScroll / 120, 0)
+  const landingRatio = Math.min(Math.max(1 - pageScroll / 120, 0), 1)
   const pagesNormalised = isMobile? scaledPages : pages.current
 
   return (
