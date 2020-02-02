@@ -406,8 +406,12 @@ color: white;
 }
 
 
-.contactMode, a.contactMode {
+.contactMode,
+a.contactMode,
+a.contactMode[href^=tel] {
   font-size: 1.75em;
+  text-decoration:inherit;
+  color: inherit;
   color: #171517 !important;
 }
 
