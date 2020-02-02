@@ -31,7 +31,7 @@ export const ContactPageTemplate = ({
       <h3>Email</h3>
       <a className={styles.contactMode} href={encodeURI(`mailto:${email}?subject=A question for Kashi Samaraweera`)}>{email}</a>
       <h3>Phone</h3>
-      <p className={styles.contactMode} href={`tel:${phone.replace(/\s/g,'')}`}>{phone}</p>
+      <a className={styles.contactMode} href={`tel:${phone.replace(/\s/g,'')}`}>{phone}</a>
     </section>
   </>
 
