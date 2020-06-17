@@ -26,12 +26,20 @@ photos:
     title: Sunset on the Arno
     blurb: Sunset captured on the Arno river in Florence
     image: /img/photo-sunset-on-the-arno.jpg
-  - temple:
-    title: Modality
-    blurb: Taking care of temple grounds, a lady sweeps leaves from the water as patrons queue to pay their respects
-    image: /img/photo-modality.jpg
+  - simrat:
+    title: Simrat the baby elephant
+    blurb: A rescued service elephant, Simrat, captured from our sunrise walk together with his mother and handlers
+    image: /img/photo-stolid-majesty.jpg
   - himalayas:
-    title: Alternate Peaks
-    blurb: The imposing peaks behind the mountain town of Kyangjin Gumba in Nepalese Himalayas
-    image: /img/photo-alternate-peaks.jpg
+    title: Sunrise in Jomsom
+    blurb: The stillness of twilight captured just as the first sign of sunrise hits the Nepalese Himalayas
+    image: /img/photo-sunrise-in-jomsom.jpg
+  - mausoleum:
+    title: Taj Mahal
+    blurb: The magnificent Taj Mahal at sunrise, captured from the gardens in front
+    image: /img/photo-taj-mahal-sunrise.jpg
+  - sunrise:
+    title: Flecks of sunrise
+    blurb: The sky painted in a brilliant hue on the Annapurnia mountain range in Nepal
+    image: /img/photo-flecks-of-sunrise.jpg
 ---

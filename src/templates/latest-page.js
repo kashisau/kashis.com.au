@@ -16,11 +16,11 @@ export const LatestPageTemplate = ({
   ctaSecondary
 }) => (
   <>
-    <div className={styles.body}>
+    <div className={[styles.bodyText, styles.lightText].join(' ')}>
       <div dangerouslySetInnerHTML={{__html: marked(body)}} />
       {[ctaPrimary, ctaSecondary].map(
         (cta, i) =>
-          cta && <a className={[styles.buttonLink, i!==0? styles.buttonLinkSecondaryDark : styles.buttonLinkDark].join(' ')} href={cta.url} title={cta.title} key={i} target="blank" rel="noopener">{cta.btnText}</a>
+          cta && <a className={[styles.buttonLink, i!==0? styles.buttonLinkSecondaryLight : styles.buttonLinkLight].join(' ')} href={cta.url} title={cta.title} key={i} target="blank" rel="noopener">{cta.btnText}</a>
       )}
     </div>
     <Img className={styles.latestFeaturedImage} fluid={image.childImageSharp.fluid} title={title} />
