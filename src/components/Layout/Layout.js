@@ -15,12 +15,17 @@ const TemplateWrapper = ({ pageContainerRef, children }) => {
         <html lang="en" />
         <title>{title}</title>
 
-        <meta name="title" property="og:title" content={title} />
-        <meta name="author" content="Kashi Samaraweera" />
-        <meta name="description" property="og:description" content={description} />
-        <meta name="image" property="og:image" content={`${url}${withPrefix("/")}img/og-image.png`} />
-        <meta name="language" content="AU" />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content={`${url}${withPrefix("/")}img/og-image.png`} />
         <meta property="og:url" content={url} />
+
+        <meta name="title" content={title} />
+        <meta name="author" content="Kashi Samaraweera" />
+        <meta name="description" content={description} />
+        <meta name="language" content="AU" />
+        <meta name="language" content="AU" />
 
         <link
           rel="apple-touch-icon"
