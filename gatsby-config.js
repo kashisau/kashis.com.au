@@ -4,7 +4,8 @@ module.exports = {
   siteMetadata: {
     title: 'Kashi Samaraweera — A Sydney-based software engineer',
     description:
-      'Kashi Samaraweera is a web application developer with over 10 years of industry experience specialising in large-scale data driven apps for government, media, and healthcare in a modern, scalable and extensible way.',
+      'Kashi Samaraweera is a web application developer with over 10 years of industry experience specialising in large-scale data driven apps for government, media, and healthcare; building apps in a modern, scalable and extensible way.',
+    url: process.env.URL || ''
   },
   plugins: [
     'gatsby-plugin-react-helmet',

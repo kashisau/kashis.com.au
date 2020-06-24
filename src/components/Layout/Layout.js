@@ -8,13 +8,19 @@ import '../../../static/fonts/fonts.css'
 import styles from './layout.module.css'
 
 const TemplateWrapper = ({ pageContainerRef, children }) => {
-  const { title, description } = useSiteMetadata()
+  const { title, description, url } = useSiteMetadata()
   return (
     <>
       <Helmet>
         <html lang="en" />
         <title>{title}</title>
-        <meta name="description" content={description} />
+
+        <meta name="title" property="og:title" content={title} />
+        <meta name="author" content="Kashi Samaraweera" />
+        <meta name="description" property="og:description" content={description} />
+        <meta name="image" property="og:image" content={`${url}${withPrefix("/")}img/og-image.png`} />
+        <meta name="language" content="AU" />
+        <meta property="og:url" content={url} />
 
         <link
           rel="apple-touch-icon"
@@ -40,12 +46,6 @@ const TemplateWrapper = ({ pageContainerRef, children }) => {
           color="#ff4400"
         />
         <meta name="theme-color" content="#fff" />
-
-        <meta property="og:type" content="business.business" />
-        <meta property="og:title" content={title} />
-        <meta property="og:url" content="/" />
-        <meta property="og:image" content={`${withPrefix("/")}img/og-image.png`} />
-
       </Helmet>
       <div className={styles.pageContainer} ref={pageContainerRef}>
         {children}
